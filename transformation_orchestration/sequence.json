@@ -1,0 +1,10 @@
+{
+  "actions": [
+    {
+      "transformation_test/anonymizer": "name"
+    },
+    {
+      "transformation_test/anonymizer": "gender"
+    }
+  ]
+}

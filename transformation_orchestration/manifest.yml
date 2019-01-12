@@ -1,0 +1,10 @@
+packages:
+  transformation_test:
+    version: 1.0
+    license: Apache-2.0
+    actions:
+      anonymizer:
+        function: anonymizer/main.js
+      transformation_orchestration:
+        function: transformation_orchestration/main.js
+        conductor: true
