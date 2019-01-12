@@ -3,7 +3,7 @@
 An orchestrator to run lots of YaPPL transformation functions on a
 dataset.
 
-## How to use?
+## How do I use this?
 1. Deploy using `wskdeploy`
 2. call actions using sequence and data parameters
 `wsk action invoke transformation_test/transformation_orchestration -r -P sequence.json -P sequence_test_data.json`
@@ -46,5 +46,22 @@ return is:
     "gender": "******"
 }
 ```
+
+## Writing Transformation Functions
+To be able to work with the transformation orchestrator, your YaPPL
+transformation function must fulfil the following contract:
+`{ "data": x } -> { "data": x' }`
+Meaning that the data that will be transformed is passed in under the
+json key "data" and the transformed data is passed back under "data" as
+well.
+
+For an "average" function that returns the average of a list of items
+this would mean the following:
+
+Input: `{ "data": [1, 2, 3, 4] }`
+Output: `{ "data": 2.5 }`
+
+The transformation orchestrator will then replace the original value in
+the currently handled dataset with the transformed value.
 
 Btw, Panda is my dog 🐼 and she is cute!
