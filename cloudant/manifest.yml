@@ -1,0 +1,5 @@
+packages:
+  cloudant_test:
+    actions:
+      read_from_db:
+        function: read_from_db/main.js
