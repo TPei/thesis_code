@@ -3,3 +3,5 @@ packages:
     actions:
       read_from_db:
         function: read_from_db/main.js
+      fetch_yappl_for_user:
+        function: fetch_yappl_for_user/main.js
