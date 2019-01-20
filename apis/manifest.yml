@@ -1,0 +1,7 @@
+packages:
+  apis:
+    actions:
+      get_users:
+        function: get_users/main.js
+      get_user:
+        function: get_user/main.js
