@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+# make sure you are running the same major ruby version locally as will be used in the OpenWhisk Ruby runtime (currently 2.5.0)
+ruby '>= 2.5.0', '< 2.6'
+
+# the gems you need for your action
+gem 'graph_lib', '0.0.1'
