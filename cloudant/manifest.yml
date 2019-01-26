@@ -5,3 +5,5 @@ packages:
         function: read_from_db/main.js
       fetch_yappl_for_user:
         function: fetch_yappl_for_user/main.js
+      get_graph:
+        function: get_graph/main.js
