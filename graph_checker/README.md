@@ -21,17 +21,7 @@ allowed, namely direct email and telephone, but not third party email
 or telephone (see Byun PBAC in case of confusion).
 
 ## How to use
-Since this is a ruby function with some libary dependencies, there are
-some things we have to consider before deploying.
-To bundle up the dependencies, we need to deploy a zip archive. This is
-already configured in the manifest.yml, you simply need to create a
-`graph_checker.zip` file.
-
-First, install the dependencies via `bundle install --standalone`.
-
-Then, create the zip via: `zip -r graph_checker.zip main.rb bundle`.
-
-Finally, you can deploy as usual via `wskdeploy`
+Deploy via `wskdeploy`
 
 Then, call it via `wsk action invoke graph/graph_checker -P request.json -r`
 `

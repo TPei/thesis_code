@@ -4,5 +4,4 @@ packages:
     license: Apache-2.0
     actions:
       graph_checker:
-        location: ./graph_checker.zip
-        runtime: ruby:2.5
+        function: main.rb
