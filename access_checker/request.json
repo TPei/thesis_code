@@ -1,0 +1,26 @@
+{
+  "graph": {
+    "vertices": ["G", "M", "D", "TP", "E", "P", "SO", "SU"],
+    "edges": [
+      ["G", "M"],
+      ["M", "D"],
+      ["M", "TP"],
+      ["D", "E"],
+      ["D", "P"],
+      ["TP", "E"],
+      ["TP", "P"],
+      ["E", "SO"],
+      ["E", "SU"],
+      ["P", "SO"],
+      ["P", "SU"]
+    ]
+  },
+  "allowed": [
+    "G.M.D.*.SO"
+  ],
+  "prohibited": [
+    "*.TP.P.*",
+    "*.D.P.SU.*"
+  ],
+  "access": "G.M.D.P.SO"
+}
