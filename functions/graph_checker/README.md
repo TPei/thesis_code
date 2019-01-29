@@ -5,7 +5,7 @@ determine if a given node is allowed or node (based on Byun's AIP,
 PIP, IP, IP* and AP definitions, transposed to DAGs).
 
 Given:
-- graph definition
+(- graph definition)
 - AP: an access purpose
 - AIP: a set of allowed purposes
 - PIP: a set of disallowed purposes
@@ -24,4 +24,4 @@ or telephone (see Byun PBAC in case of confusion).
 Deploy via `wskdeploy`
 
 Then, call it via `wsk action invoke graph/graph_checker -P request.json -r`
-`
+
