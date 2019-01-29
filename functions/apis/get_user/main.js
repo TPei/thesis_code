@@ -6,5 +6,5 @@ function main (params) {
   // - get users' data
   // - apply yappl transformations
   var userId = params.data.id
-  return { data: userId }
+  return { data: { id: userId } }
 }

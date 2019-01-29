@@ -1,0 +1,72 @@
+{
+    "purpose": "research",
+    "utilizer": "tu berlin",
+    "preference": [
+        {
+            "rule": {
+                "exp_date": "0000-01-01T00:00:00.000Z",
+                "purpose": {
+                    "excluded": [
+                        "commercial"
+                    ],
+                    "permitted": [
+                        "statistics",
+                        "planology"
+                    ]
+                },
+                "transformation": [
+                    {
+                        "attribute": "temperature",
+                        "tr_func": "minmax_hourly"
+                    }
+                ],
+                "utilizer": {
+                    "excluded": [
+                        "netatmo",
+                        "gate5"
+                    ],
+                    "permitted": [
+                        "wikimedia",
+                        "tu berlin"
+                    ]
+                },
+                "valid_from": "2017-10-09T00:00:00.000Z"
+            }
+        },
+        {
+            "rule": {
+                "exp_date": "0000-01-01T00:00:00.000Z",
+                "purpose": {
+                    "excluded": [
+                        "statistics",
+                        "planology"
+                    ],
+                    "permitted": [
+                        "commercial"
+                    ]
+                },
+                "transformation": [
+                    {
+                        "attribute": "heart_rates",
+                        "tr_func": "minmax_hourly"
+                    },
+                    {
+                        "attribute": "steps",
+                        "tr_func": "weekly_total"
+                    }
+                ],
+                "utilizer": {
+                    "excluded": [
+                        "gate5"
+                    ],
+                    "permitted": [
+                        "wikimedia",
+                        "tu berlin"
+                    ]
+                },
+                "valid_from": "2017-10-09T00:00:00.000Z"
+            }
+        }
+    ],
+    "user_id": "1337"
+}

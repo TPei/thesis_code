@@ -11,7 +11,7 @@ function main(params) {
       "dbname": "yappl",
       "query": {
         "selector": {
-          "user_id": params.id.toString()
+          "user_id": params.data.id.toString()
         }
       }
     }
