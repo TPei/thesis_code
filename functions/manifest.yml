@@ -7,6 +7,9 @@ packages:
         function: cloudant/fetch_yappl_for_user/main.js
       graph_checker:
         function: graph_checker/main.rb
+      yappl_parser:
+        location: yappl_parser/yappl_parser.zip
+        runtime: ruby:2.5
     sequences:
       api_and_yappl:
           actions: thesis_demo/get_user,thesis_demo/fetch_yappl_for_user
