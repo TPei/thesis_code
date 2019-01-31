@@ -1,0 +1,52 @@
+{
+    "access_purpose": "General-Purpose.Marketing.Direct.Email.Special-Offer",
+    "access_utilizer": "General-Utilizer.Non-Profit.University.TU-Berlin",
+    "policy": [
+        {
+            "excluded_purposes": [
+                "*.Phone.*",
+                "*.Third-Party.*.Special-Offer"
+            ],
+            "excluded_utilizers": [
+                "*.Business.*",
+                "*.Charite"
+            ],
+            "permitted_purposes": [
+                "*.Direct.*",
+                "*.Email.*"
+            ],
+            "permitted_utilizers": [
+                "*.Non-Profit.*",
+                "*.Research.*",
+                "*.University.TU Berlin"
+            ],
+            "transformations": [
+                {
+                    "attribute": "temperature",
+                    "tr_func": "minmax_hourly"
+                }
+            ]
+        },
+        {
+            "excluded_purposes": [
+                "*.Email.*"
+            ],
+            "excluded_utilizers": [
+                "*.Charite"
+            ],
+            "permitted_purposes": [
+                "*.Direct.*"
+            ],
+            "permitted_utilizers": [
+                "*.Research.*",
+                "*.University.TU Berlin"
+            ],
+            "transformations": [
+                {
+                    "attribute": "email",
+                    "tr_func": "only_provider"
+                }
+            ]
+        }
+    ]
+}

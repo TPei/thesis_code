@@ -3,4 +3,4 @@ source 'https://rubygems.org'
 ruby '>= 2.5.0', '< 2.6'
 
 # the gems you need for your action
-gem 'ruby_yappl', '0.1.4'
+gem 'ruby_yappl', '0.1.5'

@@ -10,6 +10,8 @@ packages:
       yappl_parser:
         location: yappl_parser/yappl_parser.zip
         runtime: ruby:2.5
+      transformation_map_maker:
+        function: transformation_map_maker/main.js
     sequences:
       api_and_yappl:
           actions: thesis_demo/get_user,thesis_demo/fetch_yappl_for_user

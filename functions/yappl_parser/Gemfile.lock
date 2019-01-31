@@ -6,14 +6,14 @@ GEM
     json-schema (2.8.1)
       addressable (>= 2.4)
     public_suffix (3.0.3)
-    ruby_yappl (0.1.4)
+    ruby_yappl (0.1.5)
       json-schema (~> 2.8)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  ruby_yappl (= 0.1.4)
+  ruby_yappl (= 0.1.5)
 
 RUBY VERSION
    ruby 2.5.3p105
