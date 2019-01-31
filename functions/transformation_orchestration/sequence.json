@@ -4,6 +4,12 @@
       "transformation_test/anonymizer": "name"
     },
     {
+      "transformation_test/none": "age"
+    },
+    {
+      "transformation_test/only_provider": "email"
+    },
+    {
       "transformation_test/anonymizer": "gender"
     }
   ]

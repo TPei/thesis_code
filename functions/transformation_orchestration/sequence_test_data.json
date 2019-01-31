@@ -1,5 +1,6 @@
 {
   "name": "Panda",
   "age": "< 1 year",
-  "gender": "female"
+  "gender": "female",
+  "email": "Panda@all_the_dogs.com"
 }

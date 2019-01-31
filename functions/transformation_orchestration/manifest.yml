@@ -5,6 +5,10 @@ packages:
     actions:
       anonymizer:
         function: anonymizer/main.js
+      none:
+        function: none/main.js
+      only_provider:
+        function: only_provider/main.js
       transformation_orchestration:
         function: transformation_orchestration/main.js
         conductor: true

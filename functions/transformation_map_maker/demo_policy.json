@@ -22,30 +22,9 @@
             ],
             "transformations": [
                 {
-                    "attribute": "temperature",
-                    "tr_func": "minmax_hourly"
+                    "attribute": "name",
+                    "tr_func": "none"
                 },
-                {
-                    "attribute": "heart_rate",
-                    "tr_func": "minmax_hourly"
-                }
-            ]
-        },
-        {
-            "excluded_purposes": [
-                "*.Email.*"
-            ],
-            "excluded_utilizers": [
-                "*.Charite"
-            ],
-            "permitted_purposes": [
-                "*.Direct.*"
-            ],
-            "permitted_utilizers": [
-                "*.Research.*",
-                "*.University.TU Berlin"
-            ],
-            "transformations": [
                 {
                     "attribute": "email",
                     "tr_func": "only_provider"
@@ -68,8 +47,29 @@
             ],
             "transformations": [
                 {
-                    "attribute": "name",
-                    "tr_func": "none"
+                    "attribute": "heart_rate",
+                    "tr_func": "minmax_hourly"
+                }
+            ]
+        },
+        {
+            "excluded_purposes": [
+                "*.Email.*"
+            ],
+            "excluded_utilizers": [
+                "*.Charite"
+            ],
+            "permitted_purposes": [
+                "*.Direct.*"
+            ],
+            "permitted_utilizers": [
+                "*.Research.*",
+                "*.University.TU Berlin"
+            ],
+            "transformations": [
+                {
+                    "attribute": "temperature",
+                    "tr_func": "minmax_hourly"
                 }
             ]
         }
