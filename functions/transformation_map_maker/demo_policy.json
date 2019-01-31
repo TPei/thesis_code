@@ -24,6 +24,10 @@
                 {
                     "attribute": "temperature",
                     "tr_func": "minmax_hourly"
+                },
+                {
+                    "attribute": "heart_rate",
+                    "tr_func": "minmax_hourly"
                 }
             ]
         },
@@ -45,6 +49,27 @@
                 {
                     "attribute": "email",
                     "tr_func": "only_provider"
+                }
+            ]
+        },
+        {
+            "excluded_purposes": [
+                "*.Email.*"
+            ],
+            "excluded_utilizers": [
+                "*.Charite"
+            ],
+            "permitted_purposes": [
+                "*.Direct.*"
+            ],
+            "permitted_utilizers": [
+                "*.Research.*",
+                "*.University.TU Berlin"
+            ],
+            "transformations": [
+                {
+                    "attribute": "name",
+                    "tr_func": "none"
                 }
             ]
         }

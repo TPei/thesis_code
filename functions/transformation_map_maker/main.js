@@ -7,7 +7,9 @@ function main(params) {
   au = params.access_utilizer
   policy = params.policy
 
-  // TODO: handle promises https://lornajane.net/posts/2017/one-openwhisk-action-calls-another
+  // TODO:
+  // If you pass in an array for the first parameter, the invoke call will be executed for each array item. The function returns a Promise which resolves with the results when all operations have finished.
+  // ow.actions.invoke(["a", {name: "b", blocking: true}])
   var actions = policy.map(function(rule) {
     return ow.actions.invoke({
       "name": "thesis_demo/graph_checker",
@@ -29,8 +31,13 @@ function main(params) {
           "pip": rule.excluded_utilizers
         }
       }).then(function(uResult){
+        res = {}
+        rule.transformations.forEach(function(tr) {
+          res[tr.attribute] = tr.tr_func
+        })
+
         return {
-          field: rule.transformations[0].attribute,
+          transformations: res,
           purpose: pResult,
           utilizer: uResult
         }
@@ -39,18 +46,29 @@ function main(params) {
   })
 
   return Promise.all(actions).then(function (results) {
+    nonCompliant = []
+    transformations = {}
+
+    results.forEach(function(result) {
+      // for util and purpose if one aip_compliant and ALL pip_compliant
+      purpose_pip = result.purpose.pip_compliant.every(val => val == true)
+      purpose_aip = result.purpose.aip_compliant.some(val => val == true)
+      util_pip = result.utilizer.pip_compliant.every(val => val == true)
+      util_aip = result.utilizer.aip_compliant.some(val => val == true)
+
+      keys = Object.keys(result.transformations)
+      if(purpose_pip && purpose_aip && util_pip && util_aip) {
+        keys.forEach(function(key) {
+          transformations[key] = result.transformations[key]
+        })
+      } else {
+        nonCompliant = nonCompliant.concat(keys)
+      }
+    })
+
     return {
-      response: results.map(function(result) {
-        // for util and purpose if one aip_compliant and ALL pip_compliant
-        purpose_pip = result.purpose.pip_compliant.every(val => val == true)
-        purpose_aip = result.purpose.aip_compliant.some(val => val == true)
-        util_pip = result.utilizer.pip_compliant.every(val => val == true)
-        util_aip = result.utilizer.aip_compliant.some(val => val == true)
-        return {
-          field: result.field,
-          compliant: purpose_pip && purpose_aip && util_pip && util_aip
-        }
-      })
+      compliant: transformations,
+      nonCompliant: nonCompliant
     }
   });
 }
