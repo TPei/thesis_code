@@ -20,6 +20,9 @@ Next up:
   - different transformation functions
 - done(?)
 
+Also: Use params.passthrough as passthrough instead of explicitly naming
+all variables that are passed through
+
 ## Ideas:
 Are graph_checker calls properly parallelized?
 graph_checker is called for every user rule twice: once for checking the
