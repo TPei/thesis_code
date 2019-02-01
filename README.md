@@ -11,11 +11,10 @@ The following functions are currently being called in sequence:
 - yappl_parser
 - transformation_map_maker
   - calls thesis_demo/graph_checker 2xN times
+- get user_data
+  - only compliant fields
 
 Next up:
-- get user_data
-  - only compliant fields OR
-  - filter after fetch
 - transformation_orchestration
   - different transformation functions
 - done(?)

@@ -14,6 +14,8 @@ packages:
         runtime: ruby:2.5
       transformation_map_maker:
         function: transformation_map_maker/main.js
+      user_fetch_preparer:
+        function: user_fetch_preparer/main.js
       transformation_orchestration:
         function: transformation_orchestration/transformation_orchestration/main.js
       anonymizer:
@@ -24,9 +26,10 @@ packages:
         function: transformation_orchestration/only_provider/main.js
     sequences:
       api_yappl:
-          actions: thesis_demo/get_user,thesis_demo/fetch_yappl_for_user
+        actions: thesis_demo/get_user,thesis_demo/fetch_yappl_for_user
       api_yappl_parse:
         actions: thesis_demo/api_yappl,thesis_demo/yappl_parser
       api_yappl_parse_maker:
         actions: thesis_demo/api_yappl_parse,thesis_demo/transformation_map_maker
-
+      api_yappl_parse_maker_fetcher:
+        actions: thesis_demo/api_yappl_parse_maker,thesis_demo/user_fetch_preparer,thesis_demo/fetch_user_data

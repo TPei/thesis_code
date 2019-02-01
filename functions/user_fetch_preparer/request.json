@@ -1,0 +1,12 @@
+{
+  "compliant": {
+    "email": "only_provider",
+    "name": "none"
+  },
+  "nonCompliant": [
+    "heart_rate",
+    "temperature"
+  ],
+  "user_id": "1337"
+}
+
