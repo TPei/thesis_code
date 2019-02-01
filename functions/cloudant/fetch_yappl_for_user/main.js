@@ -15,5 +15,12 @@ function main(params) {
         }
       }
     }
+  }).then(function(result) {
+    return {
+      policy: result.docs[0].policy,
+      user_id: result.docs[0].user_id,
+      access_purpose: params.data.access_purpose,
+      access_utilizer: params.data.access_utilizer
+    }
   })
 }

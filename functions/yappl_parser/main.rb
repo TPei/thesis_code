@@ -5,6 +5,9 @@ require 'json'
 # returns all active rules: aip, pip, aiu, piu, transformations
 def main(params)
   policy_hash = params['policy']
+  user_id = params['user_id']
+  access_purpose = params['access_purpose']
+  access_utilizer = params['access_utilizer']
   policy = YaPPL::Policy.from_policy_hash(policy_hash)
   tr_rules = policy.get_tr_rules
 
@@ -24,7 +27,12 @@ def main(params)
       #end
     #end
   #end
-  { policy: tr_rules }
+  {
+    policy: tr_rules,
+    user_id: user_id,
+    access_purpose: access_purpose,
+    access_utilizer: access_utilizer
+  }
 end
 
 #def allowed?(ap, au, rule)

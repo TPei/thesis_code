@@ -1,6 +1,4 @@
 {
-    "_id": "0286cc3dd7be809c6f0f042fb71b0298",
-    "_rev": "6-f1d1cdf11d47e552d2b94200d1afc8f5",
     "policy": {
         "id": 4493,
         "preference": [
@@ -37,5 +35,7 @@
             }
         ]
     },
-    "user_id": "1337"
+    "user_id": "1337",
+    "access_purpose": "General-Purpose.Marketing.Direct.Email.Special-Offer",
+    "access_utilizer": "General-Utilizer.Non-Profit.University.TU-Berlin"
 }

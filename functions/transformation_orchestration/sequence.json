@@ -1,16 +1,16 @@
 {
   "actions": [
     {
-      "transformation_test/anonymizer": "name"
+      "thesis_demo/anonymizer": "name"
     },
     {
-      "transformation_test/none": "age"
+      "thesis_demo/none": "age"
     },
     {
-      "transformation_test/only_provider": "email"
+      "thesis_demo/only_provider": "email"
     },
     {
-      "transformation_test/anonymizer": "gender"
+      "thesis_demo/anonymizer": "gender"
     }
   ]
 }
