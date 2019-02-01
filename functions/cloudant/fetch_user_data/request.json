@@ -1,0 +1,13 @@
+{
+  "data": {
+    "id": "1337",
+    "fields": [
+      "name",
+      "age",
+      "gender",
+      "race",
+      "comment",
+      "email"
+    ]
+  }
+}

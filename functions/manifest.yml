@@ -5,6 +5,8 @@ packages:
         function: apis/get_user/main.js
       fetch_yappl_for_user:
         function: cloudant/fetch_yappl_for_user/main.js
+      fetch_user_data:
+        function: cloudant/fetch_user_data/main.js
       graph_checker:
         function: graph_checker/main.rb
       yappl_parser:
