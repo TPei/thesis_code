@@ -16,8 +16,11 @@ packages:
         function: transformation_map_maker/main.js
       user_fetch_preparer:
         function: user_fetch_preparer/main.js
+      transformation_orchestration_preparer:
+        function: transformation_orchestration/transformation_orchestration_preparer/main.js
       transformation_orchestration:
         function: transformation_orchestration/transformation_orchestration/main.js
+        conductor: true
       anonymizer:
         function: transformation_orchestration/anonymizer/main.js
       none:
@@ -31,5 +34,11 @@ packages:
         actions: thesis_demo/api_yappl,thesis_demo/yappl_parser
       api_yappl_parse_maker:
         actions: thesis_demo/api_yappl_parse,thesis_demo/transformation_map_maker
+      user_fetch_and_prepare:
+        actions: thesis_demo/user_fetch_preparer,thesis_demo/fetch_user_data
       api_yappl_parse_maker_fetcher:
-        actions: thesis_demo/api_yappl_parse_maker,thesis_demo/user_fetch_preparer,thesis_demo/fetch_user_data
+        actions: thesis_demo/api_yappl_parse_maker,thesis_demo/user_fetch_and_prepare
+      transformation_sequence:
+        actions: thesis_demo/transformation_orchestration_preparer, thesis_demo/transformation_orchestration
+      api_yappl_parse_maker_fetcher_transformator:
+        actions: thesis_demo/api_yappl_parse_maker_fetcher,thesis_demo/transformation_sequence
