@@ -13,10 +13,10 @@ The following functions are currently being called in sequence:
   - calls thesis_demo/graph_checker 2xN times
 - get user_data
   - only compliant fields
-
-Next up:
 - transformation_orchestration
   - different transformation functions
+
+Next up:
 - done(?)
 
 Also: Use params.passthrough as passthrough instead of explicitly naming
