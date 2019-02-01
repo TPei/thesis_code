@@ -9,6 +9,10 @@ function main(params) {
     "data": {
       "id": userId,
       "fields": fields
+    },
+    "passthrough": {
+      compliant: params.compliant,
+      nonCompliant: params.nonCompliant
     }
   }
 }

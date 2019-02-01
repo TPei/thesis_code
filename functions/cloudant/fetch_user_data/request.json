@@ -9,5 +9,15 @@
       "comment",
       "email"
     ]
+  },
+  "passthrough": {
+    "compliant": {
+      "email": "only_provider",
+      "name": "none"
+    },
+    "nonCompliant": [
+      "heart_rate",
+      "temperature"
+    ]
   }
 }

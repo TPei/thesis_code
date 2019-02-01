@@ -17,5 +17,7 @@ function main(params) {
         "fields": fields
       }
     }
-  }).then(res => res.docs[0])
+  }).then(function(res) {
+    return { data: res.docs[0], passthrough: params.passthrough }
+  })
 }
