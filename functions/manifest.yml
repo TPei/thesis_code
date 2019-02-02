@@ -9,6 +9,8 @@ packages:
         function: cloudant/fetch_user_data/main.js
       graph_checker:
         function: graph_checker/main.rb
+      graph_checker_js:
+        function: graph_checker/main.js
       yappl_parser:
         location: yappl_parser/yappl_parser.zip
         runtime: ruby:2.5
