@@ -17,6 +17,6 @@ function makeRegexpString(purpose) {
     str += "[.]"
   })
 
-  str = str.slice(0, -3) // remove last [.]
-  return new RegExp(str + "$")
+  // remove last [.]
+  return new RegExp(str.slice(0, -3) + "$")
 }
