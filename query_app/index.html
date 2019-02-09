@@ -7,6 +7,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
 
   <title>Cloudant PBaaF Query App</title>
 </head>
@@ -42,7 +43,8 @@
       </div>
       <hr />
       <div class="output" v-for="line in output">
-        {{ line }}
+        <pre data-lang="JSON"><code>{{ line }}</code></pre>
+        <hr style="border-top: dotted 1px;" />
       </div>
       <div v-if="showSpinner">
         <div class="spinner-grow" role="status">
