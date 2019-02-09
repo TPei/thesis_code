@@ -2,6 +2,6 @@
   "data": {
     "access_purpose": "General-Purpose.Marketing.Direct.Email.Special-Offer",
     "access_utilizer": "General-Utilizer.Non-Profit.University.TU-Berlin",
-    "id": "1337"
+    "query": "{ \"selector\": { \"user_id\": \"1337\" } }"
   }
 }
