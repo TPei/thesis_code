@@ -8,13 +8,8 @@ packages:
       fetch_user_data:
         function: cloudant/fetch_user_data/main.js
       graph_checker:
-        function: graph_checker/main.rb
-      graph_checker_js:
         function: graph_checker/main.js
       yappl_parser:
-        location: yappl_parser/yappl_parser.zip
-        runtime: ruby:2.5
-      yappl_parser_js:
         function: yappl_parser/main.js
       transformation_map_maker:
         function: transformation_map_maker/main.js
@@ -35,7 +30,7 @@ packages:
       api_yappl:
         actions: thesis_demo/get_user,thesis_demo/fetch_yappl_for_user
       api_yappl_parse:
-        actions: thesis_demo/api_yappl,thesis_demo/yappl_parser_js
+        actions: thesis_demo/api_yappl,thesis_demo/yappl_parser
       api_yappl_parse_maker:
         actions: thesis_demo/api_yappl_parse,thesis_demo/transformation_map_maker
       user_fetch_and_prepare:
