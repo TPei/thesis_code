@@ -1,3 +1,4 @@
 functions/*/bundle
 functions/*/.bundle
 functions/*/*.zip
+query_app/js/env.js
