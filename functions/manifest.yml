@@ -1,6 +1,8 @@
 packages:
   thesis_demo:
     actions:
+      handle_cloudant_query:
+        function: apis/handle_cloudant_query/main.js
       get_user:
         function: apis/get_user/main.js
       fetch_yappl_for_user:
