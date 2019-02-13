@@ -43,7 +43,8 @@
       </div>
       <hr />
       <div class="output" v-for="line in output">
-        <pre data-lang="JSON"><code>{{ line }}</code></pre>
+        {{ line.timing }}
+        <pre data-lang="JSON"><code>{{ line.response }}</code></pre>
         <hr style="border-top: dotted 1px;" />
       </div>
       <div v-if="showSpinner">

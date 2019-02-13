@@ -25,6 +25,7 @@ var app = new Vue({
       console.log(requestBody);
 
       let self = this;
+      let startTime = performance.now();
 
       $.ajax({
         type: "POST",
@@ -37,7 +38,10 @@ var app = new Vue({
         }).fail(function(data) {
           console.log(data);
         }).always(function(data) {
-          self.output.push(data);
+          let endTime = performance.now();
+          let timing = "took: " + Math.round(endTime - startTime)/1000 + " seconds"
+          let outputData = { timing: timing, response: data }
+          self.output.push(outputData);
           self.showSpinner = false;
         })
     },
