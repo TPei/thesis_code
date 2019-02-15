@@ -5,10 +5,17 @@ packages:
     actions:
       anonymizer:
         function: anonymizer/main.js
+        runtime: nodejs:10
       none:
         function: none/main.js
+        runtime: nodejs:10
       only_provider:
         function: only_provider/main.js
+        runtime: nodejs:10
       transformation_orchestration:
         function: transformation_orchestration/main.js
         conductor: true
+        runtime: nodejs:10
+      transformation_orchestration_two:
+        function: transformation_orchestration/non_conductor.js
+        runtime: nodejs:10

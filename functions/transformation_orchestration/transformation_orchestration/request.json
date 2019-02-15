@@ -16,5 +16,6 @@
   "name": "Panda",
   "age": "< 1 year",
   "gender": "female",
-  "email": "Panda@all_the_dogs.com"
+  "email": "Panda@all_the_dogs.com",
+  "race": "dog"
 }

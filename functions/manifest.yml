@@ -22,6 +22,8 @@ packages:
       transformation_orchestration:
         function: transformation_orchestration/transformation_orchestration/main.js
         conductor: true
+      transformation_orchestration_two:
+        function: transformation_orchestration/transformation_orchestration/non_conductor.js
       anonymizer:
         function: transformation_orchestration/anonymizer/main.js
       none:
