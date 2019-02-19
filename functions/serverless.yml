@@ -37,7 +37,7 @@ functions:
   transformation_orchestration:
     handler: transformation_orchestration/transformation_orchestration/non_conductor.handler
     name: thesis_demo_2/transformation_orchestration
-    conductor: true
+    # conductor: true
   # helpers called elsewhere
   graph_checker:
     handler: graph_checker/main.handler
