@@ -62,3 +62,5 @@ function main(params) {
     }
   }
 }
+
+exports.handler = main;

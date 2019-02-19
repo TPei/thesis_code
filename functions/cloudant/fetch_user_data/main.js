@@ -21,3 +21,5 @@ function main(params) {
     return { data: res.docs[0], passthrough: params.passthrough }
   })
 }
+
+exports.handler = main;

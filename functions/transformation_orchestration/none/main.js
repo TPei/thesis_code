@@ -5,3 +5,5 @@
 function main (params) {
   return params
 }
+
+exports.handler = main;

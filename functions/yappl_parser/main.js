@@ -39,3 +39,5 @@ function isValid(dateString) {
 
   return currentDate < expirationDate;
 }
+
+exports.handler = main;

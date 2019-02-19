@@ -20,3 +20,5 @@ function makeRegexpString(purpose) {
   // remove last [.]
   return new RegExp(str.slice(0, -3) + "$")
 }
+
+exports.handler = main;

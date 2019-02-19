@@ -12,3 +12,5 @@ function main(params) {
 
   return Object.assign({}, fieldsMap, { actions: actions })
 }
+
+exports.handler = main;

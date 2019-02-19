@@ -31,3 +31,5 @@ function main(params) {
     return updated_params
   })
 }
+
+exports.handler = main;

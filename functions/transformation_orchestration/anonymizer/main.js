@@ -8,3 +8,5 @@ function main (params) {
 
   return { data: anonymized }
 }
+
+exports.handler = main;
