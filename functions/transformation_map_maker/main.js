@@ -10,7 +10,7 @@ function main(params) {
   // TODO:
   // If you pass in an array for the first parameter, the invoke call will be executed for each array item. The function returns a Promise which resolves with the results when all operations have finished.
   // ow.actions.invoke(["a", {name: "b", blocking: true}])
-  var actions = policy.map(function(rule) {
+  var purpose_actions = policy.map(function(rule) {
     return ow.actions.invoke({
       "name": "thesis_demo/graph_checker_js",
       "blocking": true,
@@ -20,58 +20,50 @@ function main(params) {
         "aip": rule.permitted_purposes,
         "pip": rule.excluded_purposes
       }
-    }).then(function(pResult){
-      return ow.actions.invoke({
-        "name": "thesis_demo/graph_checker_js",
-        "blocking": true,
-        "result": true,
-        "params": {
-          "ap": au,
-          "aip": rule.permitted_utilizers,
-          "pip": rule.excluded_utilizers
-        }
-      }).then(function(uResult){
-        res = {}
-        rule.transformations.forEach(function(tr) {
-          res[tr.attribute] = tr.tr_func
-        })
+    });
+  });
 
-        return {
-          transformations: res,
-          purpose: pResult,
-          utilizer: uResult
-        }
-      })
-    })
-  })
+  var utilizer_actions = policy.map(function(rule) {
+    return ow.actions.invoke({
+      "name": "thesis_demo/graph_checker_js",
+      "blocking": true,
+      "result": true,
+      "params": {
+        "ap": au,
+        "aip": rule.permitted_utilizers,
+        "pip": rule.excluded_utilizers
+      }
+    });
+  });
 
-  return Promise.all(actions).then(function (results) {
+  return Promise.all(purpose_actions.concat(utilizer_actions)).then(function (results) {
+    let purpose_results = results.slice(0, policy.length)
+    let utilizer_results = results.slice(policy.length)
+
     nonCompliant = []
     transformations = {}
 
-    results.forEach(function(result) {
-      // for util and purpose if one aip_compliant and ALL pip_compliant
-      purpose_pip = result.purpose.pip_compliant.every(val => val == true)
-      purpose_aip = result.purpose.aip_compliant.some(val => val == true)
-      util_pip = result.utilizer.pip_compliant.every(val => val == true)
-      util_aip = result.utilizer.aip_compliant.some(val => val == true)
+    for (let i = 0; i < purpose_results.length; i++) {
+      purpose_pip = purpose_results[i].pip_compliant.every(val => val == true)
+      purpose_aip = purpose_results[i].aip_compliant.some(val => val == true)
+      util_pip = utilizer_results[i].pip_compliant.every(val => val == true)
+      util_aip = utilizer_results[i].aip_compliant.some(val => val == true)
 
-      keys = Object.keys(result.transformations)
+      let rule = policy[i];
       if(purpose_pip && purpose_aip && util_pip && util_aip) {
-        keys.forEach(function(key) {
-          transformations[key] = result.transformations[key]
+        rule.transformations.forEach(tr => {
+          transformations[tr.attribute] = tr.tr_func
         })
       } else {
-        nonCompliant = nonCompliant.concat(keys)
+        nonCompliant = nonCompliant.concat(rule.transformations.map(tr => tr.attribute))
       }
-    })
-
+    }
     return {
       user_id: params.user_id,
       compliant: transformations,
       nonCompliant: nonCompliant
     }
-  });
+  })
 }
 
 exports.handler = main;

@@ -25,6 +25,11 @@ packages:
         function: yappl_parser/main.js
         limits:
           memorySize: 2048
+      yappl_parser_ruby:
+        location: yappl_parser/yappl_parser.zip
+        runtime: ruby:2.5
+        limits:
+          memorySize: 2048
       transformation_map_maker:
         function: transformation_map_maker/main.js
         limits:
