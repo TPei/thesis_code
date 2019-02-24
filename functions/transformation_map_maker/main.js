@@ -12,7 +12,7 @@ function main(params) {
   // ow.actions.invoke(["a", {name: "b", blocking: true}])
   var purpose_actions = policy.map(function(rule) {
     return ow.actions.invoke({
-      "name": "thesis_demo/graph_checker_js",
+      "name": "thesis_demo/graph_checker",
       "blocking": true,
       "result": true,
       "params": {
@@ -25,7 +25,7 @@ function main(params) {
 
   var utilizer_actions = policy.map(function(rule) {
     return ow.actions.invoke({
-      "name": "thesis_demo/graph_checker_js",
+      "name": "thesis_demo/graph_checker",
       "blocking": true,
       "result": true,
       "params": {

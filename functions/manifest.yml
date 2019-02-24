@@ -34,6 +34,10 @@ packages:
         function: transformation_map_maker/main.js
         limits:
           memorySize: 2048
+      transformation_map_maker_direct:
+        function: transformation_map_maker/direct.js
+        limits:
+          memorySize: 2048
       user_fetch_preparer:
         function: user_fetch_preparer/main.js
         limits:
@@ -69,7 +73,7 @@ packages:
       api_yappl_parse:
         actions: thesis_demo/api_yappl,thesis_demo/yappl_parser
       api_yappl_parse_maker:
-        actions: thesis_demo/api_yappl_parse,thesis_demo/transformation_map_maker
+        actions: thesis_demo/api_yappl_parse,thesis_demo/transformation_map_maker_direct
       user_fetch_and_prepare:
         actions: thesis_demo/user_fetch_preparer,thesis_demo/fetch_user_data
       api_yappl_parse_maker_fetcher:
