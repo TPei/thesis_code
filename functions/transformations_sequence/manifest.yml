@@ -1,0 +1,28 @@
+packages:
+  transformation_test:
+    version: 1.0
+    license: Apache-2.0
+    actions:
+      transformation_sequence_preparer:
+        function: transformation_sequence_preparer/main.js
+        runtime: nodejs:10
+      transformation_finalizer:
+        function: transformation_finalizer/main.js
+        runtime: nodejs:10
+      anonymizer:
+        function: anonymizer/main.js
+        runtime: nodejs:10
+      none:
+        function: none/main.js
+        runtime: nodejs:10
+      only_provider:
+        function: only_provider/main.js
+        runtime: nodejs:10
+    sequences:
+      transformation_sequence:
+        actions: >
+          transformation_sequence_preparer,
+          anonymizer,
+          none,
+          only_provider,
+          transformation_finalizer

@@ -1,0 +1,23 @@
+{
+    "data": {
+        "age": "8 months",
+        "email": "panda@all_the_dogs.com",
+        "gender": "female",
+        "name": "Panda",
+        "funky": "yes"
+    },
+    "passthrough": {
+        "compliant": {
+            "age": "none",
+            "email": "only_provider",
+            "gender": "anonymizer",
+            "name": "none",
+            "funky": "anonymizer"
+        },
+        "nonCompliant": [
+            "heart_rate",
+            "temperature"
+        ]
+    }
+}
+
