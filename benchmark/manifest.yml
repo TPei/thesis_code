@@ -1,0 +1,13 @@
+packages:
+  benchmark:
+    actions:
+      benchmark_producer:
+        function: benchmark_producer.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+      benchmark_consumer:
+        function: benchmark_consumer.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
