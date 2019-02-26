@@ -3,14 +3,17 @@ packages:
     actions:
       handle_cloudant_query:
         function: apis/handle_cloudant_query/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       get_user:
         function: apis/get_user/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       fetch_yappl_for_user:
         function: cloudant/fetch_yappl_for_user/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       fetch_user_data:
@@ -19,10 +22,12 @@ packages:
           memorySize: 2048
       graph_checker:
         function: graph_checker/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       yappl_parser:
         function: yappl_parser/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       yappl_parser_ruby:
@@ -32,69 +37,93 @@ packages:
           memorySize: 2048
       transformation_map_maker:
         function: transformation_map_maker/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       transformation_map_maker_direct:
         function: transformation_map_maker/direct.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       user_fetch_preparer:
         function: user_fetch_preparer/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       transformation_orchestration_preparer:
         function: transformation_orchestration/transformation_orchestration_preparer/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       transformation_orchestration:
         function: transformation_orchestration/transformation_orchestration/main.js
+        runtime: nodejs:10
         conductor: true
         limits:
           memorySize: 2048
       transformation_orchestration_two:
         function: transformation_orchestration/transformation_orchestration/non_conductor.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       anonymizer:
         function: transformation_orchestration/anonymizer/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       none:
         function: transformation_orchestration/none/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       only_provider:
         function: transformation_orchestration/only_provider/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       transformation_sequence_preparer:
         function: transformations_sequence/transformation_sequence_preparer/main.js
         runtime: nodejs:10
+        limits:
+          memorySize: 2048
       transformation_finalizer:
         function: transformations_sequence/transformation_finalizer/main.js
         runtime: nodejs:10
+        limits:
+          memorySize: 2048
       s_anonymizer:
         function: transformations_sequence/anonymizer/main.js
         runtime: nodejs:10
+        limits:
+          memorySize: 2048
       s_none:
         function: transformations_sequence/none/main.js
         runtime: nodejs:10
+        limits:
+          memorySize: 2048
       s_only_provider:
         function: transformations_sequence/only_provider/main.js
         runtime: nodejs:10
+        limits:
+          memorySize: 2048
     sequences:
-      orchestrator_test:
+      transformation_sequence:
         actions: >
-          transformation_orchestration_preparer,
-          transformation_orchestration_two
-      conductor_test:
-        actions: >
-          transformation_orchestration_preparer,
-          transformation_orchestration
-      sequence_test:
-        actions: >
-          transformation_sequence
+          transformation_sequence_preparer,
+          s_anonymizer,
+          s_none,
+          s_only_provider,
+          transformation_finalizer
       api_yappl_parse_maker_fetcher_transformator:
+        actions: >
+          handle_cloudant_query,
+          fetch_yappl_for_user,
+          yappl_parser,
+          transformation_map_maker_direct,
+          user_fetch_preparer,
+          fetch_user_data,
+          transformation_sequence
+      api_yappl_parse_maker_fetcher_transformator_conductor:
         actions: >
           handle_cloudant_query,
           fetch_yappl_for_user,
@@ -104,13 +133,6 @@ packages:
           fetch_user_data,
           transformation_orchestration_preparer,
           transformation_orchestration
-      transformation_sequence:
-        actions: >
-          transformation_sequence_preparer,
-          s_anonymizer,
-          s_none,
-          s_only_provider,
-          transformation_finalizer
       api_yappl_parse_maker_fetcher_transformator_orchestrator:
         actions: >
           handle_cloudant_query,

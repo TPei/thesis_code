@@ -24,7 +24,7 @@ activation_ids = [
 
 require 'json'
 
-unix_time_before_invokation = '1551093954000'
+unix_time_before_invokation = '1551095700000'
 activation_list = `bx wsk activation list --since #{unix_time_before_invokation}`
 activation_ids = activation_list.split("\n")[1..-1].map { |activation| activation.split(' ' )[0] }
 
