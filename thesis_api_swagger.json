@@ -1,0 +1,169 @@
+{
+    "swagger": "2.0",
+    "basePath": "/3824c693-8a63-42c6-9494-71844550d768",
+    "info": {
+        "title": "Thesis API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/function": {
+            "post": {
+                "operationId": "postFunction",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Request body"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful invocation response"
+                    }
+                },
+                "x-openwhisk": {
+                    "action": "deployer",
+                    "namespace": "thomas.peikert@campus.tu-berlin.de_dev",
+                    "package": "deployer",
+                    "url": "https://eu-gb.functions.cloud.ibm.com/api/v1/web/thomas.peikert@campus.tu-berlin.de_dev/deployer/deployer.json"
+                }
+            }
+        },
+        "/package": {
+            "post": {
+                "operationId": "postPackage",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Request body"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful invocation response"
+                    }
+                },
+                "x-openwhisk": {
+                    "action": "package_creator",
+                    "namespace": "thomas.peikert@campus.tu-berlin.de_dev",
+                    "package": "deployer",
+                    "url": "https://eu-gb.functions.cloud.ibm.com/api/v1/web/thomas.peikert@campus.tu-berlin.de_dev/deployer/package_creator.json"
+                }
+            }
+        },
+        "/query": {
+            "post": {
+                "operationId": "postQuery",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Request body"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful invocation response"
+                    }
+                },
+                "x-openwhisk": {
+                    "action": "api_yappl_parse_maker_fetcher_transformator",
+                    "namespace": "thomas.peikert@campus.tu-berlin.de_dev",
+                    "package": "thesis_demo",
+                    "url": "https://eu-gb.functions.cloud.ibm.com/api/v1/web/thomas.peikert@campus.tu-berlin.de_dev/thesis_demo/api_yappl_parse_maker_fetcher_transformator.json"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {},
+    "security": [
+        {}
+    ],
+    "x-ibm-configuration": {
+        "assembly": {
+            "execute": [
+                {
+                    "operation-switch": {
+                        "case": [
+                            {
+                                "execute": [
+                                    {
+                                        "set-variable": {
+                                            "actions": [
+                                                {
+                                                    "set": "message.headers.X-Require-Whisk-Auth",
+                                                    "value": "c6de321f-2140-406b-8b7d-384256c738c0"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "invoke": {
+                                            "target-url": "https://eu-gb.functions.cloud.ibm.com/api/v1/web/thomas.peikert@campus.tu-berlin.de_dev/deployer/package_creator.json",
+                                            "verb": "keep"
+                                        }
+                                    }
+                                ],
+                                "operations": [
+                                    "postPackage"
+                                ]
+                            },
+                            {
+                                "execute": [
+                                    {
+                                        "set-variable": {
+                                            "actions": [
+                                                {
+                                                    "set": "message.headers.X-Require-Whisk-Auth",
+                                                    "value": "e7195b65-b731-4ae5-a80d-ea9ec288a359"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "invoke": {
+                                            "target-url": "https://eu-gb.functions.cloud.ibm.com/api/v1/web/thomas.peikert@campus.tu-berlin.de_dev/deployer/deployer.json",
+                                            "verb": "keep"
+                                        }
+                                    }
+                                ],
+                                "operations": [
+                                    "postFunction"
+                                ]
+                            },
+                            {
+                                "execute": [
+                                    {
+                                        "set-variable": {
+                                            "actions": [
+                                                {
+                                                    "set": "message.headers.X-Require-Whisk-Auth",
+                                                    "value": "93d7fdc6-1156-4e28-8420-6dca2f6d6c2f"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "invoke": {
+                                            "target-url": "https://eu-gb.functions.cloud.ibm.com/api/v1/web/thomas.peikert@campus.tu-berlin.de_dev/thesis_demo/api_yappl_parse_maker_fetcher_transformator.json",
+                                            "verb": "keep"
+                                        }
+                                    }
+                                ],
+                                "operations": [
+                                    "postQuery"
+                                ]
+                            }
+                        ],
+                        "otherwise": [],
+                        "title": "whisk-invoke"
+                    }
+                }
+            ]
+        },
+        "cors": {
+            "enabled": true
+        }
+    }
+}
