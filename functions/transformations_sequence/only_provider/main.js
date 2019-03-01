@@ -1,6 +1,10 @@
 // returns only provider and tld from an email address
 // { data: 'some1234mail@gmail.com' } -> { data: '@gmail.com' }
 function main(params) {
+  return { data: params.data.map(ele => filter(ele)) }
+}
+
+function filter(params) {
   let updated_params = params
   let actions = params.actions
   actions.forEach(function(action) {

@@ -1,4 +1,8 @@
 function main(params) {
+  return { data: params.data.map(ele => prepare(ele)) }
+}
+
+function prepare(params) {
   const fieldsMap = params.data
   const transformations = params.passthrough.compliant
   const requested_fields = params.passthrough.query.fields

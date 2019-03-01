@@ -1,6 +1,10 @@
 var openwhisk = require('openwhisk')
 
 function main(params) {
+  return { data: params.data.map(ele => buildMap(ele)) }
+}
+
+function buildMap(params) {
   var ow = openwhisk()
 
   ap = params.access_purpose

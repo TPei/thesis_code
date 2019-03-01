@@ -1,6 +1,10 @@
 const DEFAULT_DATE = "0000-01-01T00:00:00.000Z";
 
 function main(params) {
+  return { data: params.data.map(ele => parsePolicies(ele)) }
+}
+
+function parsePolicies(params) {
   policy = params.policy
   user_id = params.user_id
   access_purpose = params.access_purpose

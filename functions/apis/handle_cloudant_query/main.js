@@ -27,7 +27,7 @@ function main(params) {
     return {
       data: {
         // currently only first user
-        id: result.docs.map(user => user.user_id)[0],
+        ids: result.docs.map(user => user.user_id),
         query: original_query,
         access_purpose: params.data.access_purpose,
         access_utilizer: params.data.access_utilizer

@@ -11,17 +11,21 @@ function main(params) {
       "dbname": "yappl",
       "query": {
         "selector": {
-          "user_id": params.data.id.toString()
+          "user_id": { "$in": params.data.ids }
         }
       }
     }
   }).then(function(result) {
     return {
-      policy: result.docs[0].policy,
-      user_id: result.docs[0].user_id,
-      access_purpose: params.data.access_purpose,
-      access_utilizer: params.data.access_utilizer,
-      query: params.data.query
+      data: result.docs.map(doc => {
+        return {
+          policy: doc.policy,
+          user_id: doc.user_id,
+          access_purpose: params.data.access_purpose,
+          access_utilizer: params.data.access_utilizer,
+          query: params.data.query
+        }
+      })
     }
   })
 }

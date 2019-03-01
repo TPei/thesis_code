@@ -1,6 +1,10 @@
 // returns data unaltered (echo)
 
 function main(params) {
+  return { data: params.data.map(ele => filter(ele)) }
+}
+
+function filter(params) {
   let updated_params = params
   let actions = params.actions
   actions.forEach(function(action) {

@@ -1,4 +1,8 @@
 function main(params) {
+  return { data: params.data.map(ele => prepare(ele)) }
+}
+
+function prepare(params) {
   const userId = params.user_id
   const requested_fields = params.query.fields
   let fields = Object.keys(params.compliant)
