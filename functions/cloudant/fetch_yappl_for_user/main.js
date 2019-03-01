@@ -20,7 +20,8 @@ function main(params) {
       policy: result.docs[0].policy,
       user_id: result.docs[0].user_id,
       access_purpose: params.data.access_purpose,
-      access_utilizer: params.data.access_utilizer
+      access_utilizer: params.data.access_utilizer,
+      query: params.data.query
     }
   })
 }

@@ -10,7 +10,8 @@ function main(params) {
     policy: parseYappl(policy),
     user_id: user_id,
     access_purpose: access_purpose,
-    access_utilizer: access_utilizer
+    access_utilizer: access_utilizer,
+    query: params.query
   }
 }
 

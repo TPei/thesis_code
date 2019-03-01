@@ -5,12 +5,6 @@
         },
         {
             "only_provider": "email"
-        },
-        {
-            "anonymizer": "gender"
-        },
-        {
-            "none": "name"
         }
     ],
     "age": "8 months",

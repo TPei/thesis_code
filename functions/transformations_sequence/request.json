@@ -17,7 +17,13 @@
         "nonCompliant": [
             "heart_rate",
             "temperature"
-        ]
+        ],
+        "query": {
+          "fields": [
+            "age",
+            "email"
+          ]
+        }
     }
 }
 

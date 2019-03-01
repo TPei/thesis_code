@@ -47,7 +47,8 @@ function main(params) {
   return {
     user_id: params.user_id,
     compliant: transformations,
-    nonCompliant: nonCompliant
+    nonCompliant: nonCompliant,
+    query: params.query
   }
 }
 
