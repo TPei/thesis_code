@@ -1,8 +1,0 @@
-packages:
-  yappl:
-    version: 1.0
-    license: Apache-2.0
-    actions:
-      yappl_parser:
-        location: ./yappl_parser.zip
-        runtime: ruby:2.5

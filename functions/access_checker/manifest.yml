@@ -1,7 +1,0 @@
-packages:
-  graph:
-    version: 1.0
-    license: Apache-2.0
-    actions:
-      access_checker:
-        function: main.rb

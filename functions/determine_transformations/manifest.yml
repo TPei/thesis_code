@@ -1,8 +1,0 @@
-packages:
-  yappl:
-    version: 1.0
-    license: Apache-2.0
-    actions:
-      determine_transformations:
-        location: ./determine_transformations.zip
-        runtime: ruby:2.5
