@@ -1,7 +1,17 @@
 {
   "data": {
+    "query": {
+      "selector": { "breed": "mix", "gender": "female" },
+      "fields": [
+        "_id",
+        "name",
+        "age",
+        "gender",
+        "race",
+        "comment"
+      ]
+    },
     "access_purpose": "General-Purpose.Marketing.Direct.Email.Special-Offer",
-    "access_utilizer": "General-Utilizer.Non-Profit.University.TU-Berlin",
-    "query": "{ \"selector\": { \"user_id\": \"1337\" } }"
+    "access_utilizer": "General-Utilizer.Non-Profit.University.TU-Berlin"
   }
 }
