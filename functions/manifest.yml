@@ -18,6 +18,7 @@ packages:
           memorySize: 2048
       fetch_user_data:
         function: cloudant/fetch_user_data/main.js
+        runtime: nodejs:10
         limits:
           memorySize: 2048
       graph_checker:
