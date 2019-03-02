@@ -1,4 +1,11 @@
 {
+  "dependencies": {
+    "js-yaml": "~3.12"
+  },
+  "devDependencies": {
+    "js-yaml": "~3.12",
+    "jest": "~24.1"
+  },
   "scripts": {
     "test": "jest"
   }

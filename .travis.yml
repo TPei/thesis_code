@@ -4,12 +4,14 @@ node_js:
   - 8
   - 10
 
+before_install:
+  - cd ./functions/tests
+
 install:
   - npm install -g jest
-  - npm install js-yaml
+  - npm install
 
 script:
-  - cd ./functions/tests
   - npm run test
 
 notifications:
