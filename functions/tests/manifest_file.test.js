@@ -1,4 +1,4 @@
-yaml = require('js-yaml');
+const yaml = require('js-yaml');
 const fs = require('fs');
 
 test('required actions are in manifest', () => {
