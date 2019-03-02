@@ -1,5 +1,3 @@
-var openwhisk = require('openwhisk')
-
 function main(params) {
   return { data: params.data.map(ele => buildMap(ele)) }
 }
