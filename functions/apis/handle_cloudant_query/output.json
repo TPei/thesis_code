@@ -4,12 +4,11 @@
         "access_utilizer": "General-Utilizer.Non-Profit.University.TU-Berlin",
         "ids": [
             "1337",
-            "42",
             "2011"
         ],
         "query": {
             "selector": {
-                "user_id": { "$in": ["1337", "42", "2011"] }
+                "user_id": { "$in": ["1337", "2011"] }
             }
         }
     }

@@ -19,7 +19,6 @@
                     "user_id": {
                         "$in": [
                             "1337",
-                            "42",
                             "2011"
                         ]
                     }
@@ -46,40 +45,12 @@
                     "user_id": {
                         "$in": [
                             "1337",
-                            "42",
                             "2011"
                         ]
                     }
                 }
             },
             "user_id": "2011"
-        },
-        {
-            "compliant": {
-                "age": "none",
-                "breed": "none",
-                "dob": "anonymizer",
-                "email": "only_provider",
-                "gender": "anonymizer",
-                "ingredients": "none",
-                "name": "none"
-            },
-            "nonCompliant": [
-                "heart_rate",
-                "temperature"
-            ],
-            "query": {
-                "selector": {
-                    "user_id": {
-                        "$in": [
-                            "1337",
-                            "42",
-                            "2011"
-                        ]
-                    }
-                }
-            },
-            "user_id": "42"
         }
     ]
 }

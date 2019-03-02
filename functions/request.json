@@ -3,7 +3,7 @@
     "query": {
       "selector": { "breed": "mix", "gender": "female" },
       "fields": [
-        "_id",
+        "user_id",
         "name",
         "age",
         "gender",

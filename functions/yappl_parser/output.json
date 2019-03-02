@@ -140,7 +140,6 @@
                     "user_id": {
                         "$in": [
                             "1337",
-                            "42",
                             "2011"
                         ]
                     }
@@ -288,161 +287,12 @@
                     "user_id": {
                         "$in": [
                             "1337",
-                            "42",
                             "2011"
                         ]
                     }
                 }
             },
             "user_id": "2011"
-        },
-        {
-            "access_purpose": "General-Purpose.Marketing.Direct.Email.Special-Offer",
-            "access_utilizer": "General-Utilizer.Non-Profit.University.TU-Berlin",
-            "policy": [
-                {
-                    "excluded_purposes": [
-                        "*.Phone.*",
-                        "*.Third-Party.*.Special-Offer"
-                    ],
-                    "excluded_utilizers": [
-                        "*.Business.*",
-                        "*.Charite",
-                        "*.University.HS Flensburg"
-                    ],
-                    "permitted_purposes": [
-                        "*.Direct.*",
-                        "*.Marketing.Direct.Email.*",
-                        "*.Direct.*.Email.*",
-                        "*.Email.*",
-                        "*.Third-Party.*.Service-Updates"
-                    ],
-                    "permitted_utilizers": [
-                        "*.Non-Profit.*",
-                        "*.Research.*",
-                        "*.University.TU Berlin",
-                        "*.University.HU Berlin",
-                        "*.University.FU Berlin",
-                        "*.University.HTW Berlin",
-                        "*.University.Europa University Flensburg",
-                        "*.University.Beuth"
-                    ],
-                    "transformations": [
-                        {
-                            "attribute": "name",
-                            "tr_func": "none"
-                        },
-                        {
-                            "attribute": "breed",
-                            "tr_func": "none"
-                        },
-                        {
-                            "attribute": "email",
-                            "tr_func": "only_provider"
-                        },
-                        {
-                            "attribute": "gender",
-                            "tr_func": "anonymizer"
-                        },
-                        {
-                            "attribute": "age",
-                            "tr_func": "none"
-                        }
-                    ]
-                },
-                {
-                    "excluded_purposes": [
-                        "*.Phone.*",
-                        "*.Third-Party.*.Special-Offer"
-                    ],
-                    "excluded_utilizers": [
-                        "*.Business.*",
-                        "*.Charite",
-                        "*.University.HTW Berlin",
-                        "*.University.Beuth",
-                        "*.University.Europa University Flensburg",
-                        "*.University.HS Flensburg"
-                    ],
-                    "permitted_purposes": [
-                        "*.Direct.*",
-                        "*.Marketing.Direct.Email.*",
-                        "*.Direct.*.Email.*",
-                        "*.Email.*",
-                        "*.Third-Party.*.Service-Updates"
-                    ],
-                    "permitted_utilizers": [
-                        "*.Non-Profit.*",
-                        "*.Research.*",
-                        "*.University.TU Berlin",
-                        "*.University.HU Berlin",
-                        "*.University.FU Berlin"
-                    ],
-                    "transformations": [
-                        {
-                            "attribute": "ingredients",
-                            "tr_func": "none"
-                        },
-                        {
-                            "attribute": "dob",
-                            "tr_func": "anonymizer"
-                        }
-                    ]
-                },
-                {
-                    "excluded_purposes": [
-                        "*.Email.*"
-                    ],
-                    "excluded_utilizers": [
-                        "*.Charite"
-                    ],
-                    "permitted_purposes": [
-                        "*.Direct.*"
-                    ],
-                    "permitted_utilizers": [
-                        "*.Research.*",
-                        "*.University.TU Berlin"
-                    ],
-                    "transformations": [
-                        {
-                            "attribute": "heart_rate",
-                            "tr_func": "minmax_hourly"
-                        }
-                    ]
-                },
-                {
-                    "excluded_purposes": [
-                        "*.Email.*"
-                    ],
-                    "excluded_utilizers": [
-                        "*.Charite"
-                    ],
-                    "permitted_purposes": [
-                        "*.Direct.*"
-                    ],
-                    "permitted_utilizers": [
-                        "*.Research.*",
-                        "*.University.TU Berlin"
-                    ],
-                    "transformations": [
-                        {
-                            "attribute": "temperature",
-                            "tr_func": "minmax_hourly"
-                        }
-                    ]
-                }
-            ],
-            "query": {
-                "selector": {
-                    "user_id": {
-                        "$in": [
-                            "1337",
-                            "42",
-                            "2011"
-                        ]
-                    }
-                }
-            },
-            "user_id": "42"
         }
     ]
 }

@@ -27,18 +27,6 @@
                 "German Shepherd"
             ],
             "name": "Milli"
-        },
-        {
-            "age": "13 months",
-            "breed": "mix",
-            "dob": "****************",
-            "email": "all_the_dogs.com",
-            "gender": "****",
-            "ingredients": [
-                "Labrador",
-                "Australian Shepherd"
-            ],
-            "name": "Scott the Dog"
         }
     ]
 }

@@ -3,8 +3,6 @@ function main(params) {
 }
 
 function buildMap(params) {
-  var ow = openwhisk()
-
   ap = params.access_purpose
   au = params.access_utilizer
   policy = params.policy

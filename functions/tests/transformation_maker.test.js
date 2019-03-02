@@ -1,16 +1,12 @@
 const fs = require('fs');
-const transformation = require('../transformation_map_maker/direct.js')
+const transform = require('../transformation_map_maker/direct.js').handler
 
 // test that all request.json / output.json files match
 test('transformation_map_maker does its job', () => {
   let input = '../transformation_map_maker/request.json'
   let output = '../transformation_map_maker/output.json'
 
-  fs.readFileSync(output, (err, output) => {
-    if (err) throw err;
-    fs.readFileSync(input, (err, input) => {
-      if (err) throw err;
-      expect(transformation(input)).toEqual(output)
-    });
-  });
+  output = JSON.parse(fs.readFileSync(output, 'utf8'));
+  input = JSON.parse(fs.readFileSync(input, 'utf8'));
+  expect(transform(input)).toEqual(output)
 });
