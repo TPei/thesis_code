@@ -6,10 +6,10 @@ node_js:
 
 install:
   - npm install -g jest
+  - npm install -g js-yaml
 
 script:
   - cd ./functions/tests
-  - npm install
   - npm run test
 
 notifications:

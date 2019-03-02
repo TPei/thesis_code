@@ -16,8 +16,6 @@ test('inputs equal previous outputs', () => {
   input_output_pairs.forEach(pair => {
     let input = pair[0]
     let output = pair[1]
-    console.log(input)
-    console.log(output)
     output = fs.readFileSync(output, 'utf8');
     input = fs.readFileSync(input, 'utf8');
     expect(input).toEqual(output)
