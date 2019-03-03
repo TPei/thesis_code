@@ -34,15 +34,16 @@ function main(params) {
     return Promise.reject('query field is ' + (typeof query) + ' and should be an object or a JSON string.');
   }
 
-  return queryIndex(cloudantDb, query);
+  return queryIndex(cloudantDb, query, params.passthrough);
 
 }
 
-function queryIndex(cloudantDb, query) {
+function queryIndex(cloudantDb, query, passthrough) {
   return new Promise(function (resolve, reject) {
     cloudantDb.find(query, function (error, response) {
       if (!error) {
         console.log('success', response);
+        response.passthrough = passthrough;
         resolve(response);
       } else {
         console.log('error', error);

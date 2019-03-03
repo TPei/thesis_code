@@ -1,8 +1,13 @@
 packages:
   thesis_demo:
     actions:
-      handle_cloudant_query:
-        function: apis/handle_cloudant_query/main.js
+      handle_cloudant_query_pre:
+        function: apis/handle_cloudant_query/pre.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+      handle_cloudant_query_post:
+        function: apis/handle_cloudant_query/post.js
         runtime: nodejs:10
         limits:
           memorySize: 2048
@@ -13,6 +18,11 @@ packages:
           memorySize: 2048
       my_exec_query_find:
         function: cloudant/exec_query_find/main.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+      post_yappl_fetcher:
+        function: cloudant/post_yappl_fetcher/main.js
         runtime: nodejs:10
         limits:
           memorySize: 2048
@@ -31,8 +41,13 @@ packages:
         runtime: nodejs:10
         limits:
           memorySize: 2048
-      fetch_user_data:
-        function: cloudant/fetch_user_data/main.js
+      fetch_user_data_pre:
+        function: cloudant/fetch_user_data/pre.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+      fetch_user_data_post:
+        function: cloudant/fetch_user_data/post.js
         runtime: nodejs:10
         limits:
           memorySize: 2048
@@ -62,6 +77,21 @@ packages:
         limits:
           memorySize: 2048
     sequences:
+      handle_cloudant_query:
+        actions: >
+          handle_cloudant_query_pre,
+          my_exec_query_find,
+          handle_cloudant_query_post
+      fetch_yappl:
+        actions: >
+          fetch_yappl_for_user,
+          my_exec_query_find,
+          post_yappl_fetcher
+      fetch_user_data:
+        actions: >
+          fetch_user_data_pre,
+          my_exec_query_find,
+          fetch_user_data_post
       transformation_sequence:
         actions: >
           transformation_sequence_preparer,
@@ -72,7 +102,7 @@ packages:
       api_yappl_parse_maker_fetcher_transformator:
         actions: >
           handle_cloudant_query,
-          fetch_yappl_for_user,
+          fetch_yappl,
           yappl_parser,
           transformation_map_maker_direct,
           user_fetch_preparer,
