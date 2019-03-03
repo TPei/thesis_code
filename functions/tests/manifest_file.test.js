@@ -6,9 +6,10 @@ test('required actions are in manifest', () => {
   var doc = yaml.safeLoad(fs.readFileSync(file, 'utf8'));
 
   let actionNames = Object.keys(doc.packages.thesis_demo.actions);
-  expect(actionNames.length).toEqual(11)
+  expect(actionNames.length).toEqual(12)
   expect(actionNames).toContain('handle_cloudant_query');
   expect(actionNames).toContain('fetch_yappl_for_user');
+  expect(actionNames).toContain('my_exec_query_find');
   expect(actionNames).toContain('yappl_parser');
   expect(actionNames).toContain('transformation_map_maker_direct');
   expect(actionNames).toContain('user_fetch_preparer');

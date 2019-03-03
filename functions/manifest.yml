@@ -11,6 +11,11 @@ packages:
         runtime: nodejs:10
         limits:
           memorySize: 2048
+      my_exec_query_find:
+        function: cloudant/exec_query_find/main.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
       yappl_parser:
         function: yappl_parser/main.js
         runtime: nodejs:10

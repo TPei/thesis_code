@@ -4,7 +4,7 @@ function main(params) {
   var ow = openwhisk()
 
   return ow.actions.invoke({
-    "name": "applicationdb/exec-query-find",
+    "name": "thesis_demo/my_exec_query_find",
     "blocking": true,
     "result": true,
     "params": {
