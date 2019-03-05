@@ -1,0 +1,229 @@
+{
+  "yappl": {
+    "policy": {
+      "id": 4493,
+      "preference": [
+        {
+          "rule": {
+            "purpose": {
+              "permitted": [
+                "*.Direct.*",
+                "*.Marketing.Direct.Email.*",
+                "*.Direct.*.Email.*",
+                "*.Email.*",
+                "*.Third-Party.*.Service-Updates"
+                                                                                                                                                        ],
+                                                                                                                                                        "excluded": [
+                                                                                                                                                          "*.Phone.*",
+                                                                                                                                                          "*.Third-Party.*.Special-Offer"
+                                                                                                                                                        ]
+            },
+            "utilizer": {
+              "permitted": [
+                "*.Non-Profit.*",
+                "*.Research.*",
+                "*.University.TU Berlin",
+                "*.University.HU Berlin",
+                "*.University.FU Berlin",
+                "*.University.HTW Berlin",
+                "*.University.Europa University Flensburg",
+                "*.University.Beuth"
+                ],
+                "excluded": [
+                  "*.Business.*",
+                  "*.Charite",
+                  "*.University.HS Flensburg"
+                ]
+            },
+            "transformation": [
+              {
+                "attribute": "name",
+                "tr_func": "none"
+              },
+              {
+                "attribute": "breed",
+                "tr_func": "none"
+              },
+              {
+                "attribute": "email",
+                "tr_func": "only_provider"
+              },
+              {
+                "attribute": "gender",
+                "tr_func": "anonymizer"
+              },
+              {
+                "attribute": "age",
+                "tr_func": "none"
+              }
+            ],
+            "valid_from": "2017-10-09T00:00:00.000Z",
+            "exp_date": "0000-01-01T00:00:00.000Z"
+          }
+        },
+        {
+          "rule": {
+            "purpose": {
+              "permitted": [
+                "*.Direct.*",
+                "*.Marketing.Direct.Email.*",
+                "*.Direct.*.Email.*",
+                "*.Email.*",
+                "*.Third-Party.*.Service-Updates"
+                ],
+                "excluded": [
+                  "*.Phone.*",
+                  "*.Third-Party.*.Special-Offer"
+                ]
+            },
+            "utilizer": {
+              "permitted": [
+                "*.Non-Profit.*",
+                "*.Research.*",
+                "*.University.TU Berlin",
+                "*.University.HU Berlin",
+                "*.University.FU Berlin"
+                ],
+                "excluded": [
+                  "*.Business.*",
+                  "*.Charite",
+                  "*.University.HTW Berlin",
+                  "*.University.Beuth",
+                  "*.University.Europa University Flensburg",
+                  "*.University.HS Flensburg"
+                ]
+            },
+            "transformation": [
+              {
+                "attribute": "ingredients",
+                "tr_func": "none"
+              },
+              {
+                "attribute": "dob",
+                "tr_func": "anonymizer"
+              }
+            ],
+            "valid_from": "2017-10-09T00:00:00.000Z",
+            "exp_date": "0000-01-01T00:00:00.000Z"
+          }
+        },
+        {
+          "rule": {
+            "purpose": {
+              "permitted": [
+                "*.Direct.*"
+                ],
+                "excluded": [
+                  "*.Email.*"
+                ]
+            },
+            "utilizer": {
+              "permitted": [
+                "*.Research.*",
+                "*.University.TU Berlin"
+                ],
+                "excluded": [
+                  "*.Charite"
+                ]
+            },
+            "transformation": [
+              {
+                "attribute": "heart_rate",
+                "tr_func": "minmax_hourly"
+              }
+            ],
+            "valid_from": "2017-10-09T00:00:00.000Z",
+            "exp_date": "0000-01-01T00:00:00.000Z"
+          }
+        },
+        {
+          "rule": {
+            "purpose": {
+              "permitted": [
+                "*.Direct.*"
+                ],
+                "excluded": [
+                  "*.Email.*"
+                ]
+            },
+            "utilizer": {
+              "permitted": [
+                "*.Research.*",
+                "*.University.TU Berlin"
+                ],
+                "excluded": [
+                  "*.Charite"
+                ]
+            },
+            "transformation": [
+              {
+                "attribute": "temperature",
+                "tr_func": "minmax_hourly"
+              }
+            ],
+            "valid_from": "2017-10-09T00:00:00.000Z",
+            "exp_date": "0000-01-01T00:00:00.000Z"
+          }
+        }
+      ]
+    }
+  },
+  "document": {
+    "age": "5 months",
+    "comment": "a cutie",
+    "name": "nameless doggy",
+    "race": "dog",
+    "breed": "German Shepherd",
+    "dob": "March 25, 2018",
+    "email": "doggy@all_the_dogs.com",
+    "heart_rate": [
+      {
+        "timestamp": "2017-10-09T00:01:00.000Z",
+        "value": "137"
+      },
+      {
+        "timestamp": "2017-10-09T00:02:00.000Z",
+        "value": "140"
+      },
+      {
+        "timestamp": "2017-10-09T00:03:00.000Z",
+        "value": "139"
+      },
+      {
+        "timestamp": "2017-10-09T00:04:00.000Z",
+        "value": "141"
+      },
+      {
+        "timestamp": "2017-10-09T00:05:00.000Z",
+        "value": "145"
+      }
+    ],
+    "temperature": [
+      {
+        "timestamp": "2017-10-09T00:01:00.000Z",
+        "value": "37.1",
+        "unit": "centigrade"
+      },
+      {
+        "timestamp": "2017-10-09T00:02:00.000Z",
+        "value": "37.5",
+        "unit": "centigrade"
+      },
+      {
+        "timestamp": "2017-10-09T00:03:00.000Z",
+        "value": "37.3",
+        "unit": "centigrade"
+      },
+      {
+        "timestamp": "2017-10-09T00:04:00.000Z",
+        "value": "37.4",
+        "unit": "centigrade"
+      },
+      {
+        "timestamp": "2017-10-09T00:05:00.000Z",
+        "value": "37.2",
+        "unit": "centigrade"
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+packages:
+  fill_db:
+    actions:
+      insert:
+        function: insert.js
