@@ -1,9 +1,11 @@
-var openwhisk = require('openwhisk')
+const openwhisk = require('openwhisk')
+const performance = require('perf_hooks').performance;
 
 function main(params) {
-  var ow = openwhisk()
+  let ow = openwhisk()
 
   let benchmark_name = params.messages[0].value
+  let t0 = performance.now();
 
   return ow.actions.invoke({
     name: "thesis_demo/api_yappl_parse_maker_fetcher_transformator",
@@ -16,6 +18,7 @@ function main(params) {
       }
     }
   }).then(activation => {
+    let t1 = performance.now();
     // write to bucket
     let time = new Date().getTime();
 
@@ -24,7 +27,7 @@ function main(params) {
       params: {
         bucket: "benchmark-results-gb",
         key: benchmark_name + ":" + time,
-        body: { date: time, benchmark: benchmark_name, duration: activation.duration }
+        body: { date: time, benchmark: benchmark_name, duration: activation.duration, executionTime: t1 - t0 }
       }
     }).then(() => {
       return {
