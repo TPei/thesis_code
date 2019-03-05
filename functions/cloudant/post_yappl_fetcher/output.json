@@ -1,0 +1,358 @@
+{
+	"data": [
+		{
+			"access_purpose": "ap",
+			"access_utilizer": "au",
+			"policy": {
+				"id": 4493,
+				"preference": [
+					{
+						"rule": {
+							"exp_date": "0000-01-01T00:00:00.000Z",
+							"purpose": {
+								"excluded": [
+									"*.Phone.*",
+									"*.Third-Party.*.Special-Offer"
+								],
+								"permitted": [
+									"*.Direct.*",
+									"*.Marketing.Direct.Email.*",
+									"*.Direct.*.Email.*",
+									"*.Email.*",
+									"*.Third-Party.*.Service-Updates"
+								]
+							},
+							"transformation": [
+								{
+									"attribute": "name",
+									"tr_func": "none"
+								},
+								{
+									"attribute": "breed",
+									"tr_func": "none"
+								},
+								{
+									"attribute": "email",
+									"tr_func": "only_provider"
+								},
+								{
+									"attribute": "gender",
+									"tr_func": "anonymizer"
+								},
+								{
+									"attribute": "age",
+									"tr_func": "none"
+								}
+							],
+							"utilizer": {
+								"excluded": [
+									"*.Business.*",
+									"*.Charite",
+									"*.University.HS Flensburg"
+								],
+								"permitted": [
+									"*.Non-Profit.*",
+									"*.Research.*",
+									"*.University.TU Berlin",
+									"*.University.HU Berlin",
+									"*.University.FU Berlin",
+									"*.University.HTW Berlin",
+									"*.University.Europa University Flensburg",
+									"*.University.Beuth"
+								]
+							},
+							"valid_from": "2017-10-09T00:00:00.000Z"
+						}
+					},
+					{
+						"rule": {
+							"exp_date": "0000-01-01T00:00:00.000Z",
+							"purpose": {
+								"excluded": [
+									"*.Phone.*",
+									"*.Third-Party.*.Special-Offer"
+								],
+								"permitted": [
+									"*.Direct.*",
+									"*.Marketing.Direct.Email.*",
+									"*.Direct.*.Email.*",
+									"*.Email.*",
+									"*.Third-Party.*.Service-Updates"
+								]
+							},
+							"transformation": [
+								{
+									"attribute": "ingredients",
+									"tr_func": "none"
+								},
+								{
+									"attribute": "dob",
+									"tr_func": "anonymizer"
+								}
+							],
+							"utilizer": {
+								"excluded": [
+									"*.Business.*",
+									"*.Charite",
+									"*.University.HTW Berlin",
+									"*.University.Beuth",
+									"*.University.Europa University Flensburg",
+									"*.University.HS Flensburg"
+								],
+								"permitted": [
+									"*.Non-Profit.*",
+									"*.Research.*",
+									"*.University.TU Berlin",
+									"*.University.HU Berlin",
+									"*.University.FU Berlin"
+								]
+							},
+							"valid_from": "2017-10-09T00:00:00.000Z"
+						}
+					},
+					{
+						"rule": {
+							"exp_date": "0000-01-01T00:00:00.000Z",
+							"purpose": {
+								"excluded": [
+									"*.Email.*"
+								],
+								"permitted": [
+									"*.Direct.*"
+								]
+							},
+							"transformation": [
+								{
+									"attribute": "heart_rate",
+									"tr_func": "minmax_hourly"
+								}
+							],
+							"utilizer": {
+								"excluded": [
+									"*.Charite"
+								],
+								"permitted": [
+									"*.Research.*",
+									"*.University.TU Berlin"
+								]
+							},
+							"valid_from": "2017-10-09T00:00:00.000Z"
+						}
+					},
+					{
+						"rule": {
+							"exp_date": "0000-01-01T00:00:00.000Z",
+							"purpose": {
+								"excluded": [
+									"*.Email.*"
+								],
+								"permitted": [
+									"*.Direct.*"
+								]
+							},
+							"transformation": [
+								{
+									"attribute": "temperature",
+									"tr_func": "minmax_hourly"
+								}
+							],
+							"utilizer": {
+								"excluded": [
+									"*.Charite"
+								],
+								"permitted": [
+									"*.Research.*",
+									"*.University.TU Berlin"
+								]
+							},
+							"valid_from": "2017-10-09T00:00:00.000Z"
+						}
+					}
+				]
+			},
+			"query": {
+				"selector": {
+					"its": "a query"
+				}
+			},
+			"user_id": "1337"
+		},
+		{
+			"access_purpose": "ap",
+			"access_utilizer": "au",
+			"policy": {
+				"id": 4493,
+				"preference": [
+					{
+						"rule": {
+							"exp_date": "0000-01-01T00:00:00.000Z",
+							"purpose": {
+								"excluded": [
+									"*.Phone.*",
+									"*.Third-Party.*.Special-Offer"
+								],
+								"permitted": [
+									"*.Direct.*",
+									"*.Marketing.Direct.Email.*",
+									"*.Direct.*.Email.*",
+									"*.Email.*",
+									"*.Third-Party.*.Service-Updates"
+								]
+							},
+							"transformation": [
+								{
+									"attribute": "name",
+									"tr_func": "none"
+								},
+								{
+									"attribute": "breed",
+									"tr_func": "none"
+								},
+								{
+									"attribute": "email",
+									"tr_func": "only_provider"
+								},
+								{
+									"attribute": "gender",
+									"tr_func": "anonymizer"
+								},
+								{
+									"attribute": "age",
+									"tr_func": "none"
+								}
+							],
+							"utilizer": {
+								"excluded": [
+									"*.Business.*",
+									"*.Charite",
+									"*.University.HS Flensburg"
+								],
+								"permitted": [
+									"*.Non-Profit.*",
+									"*.Research.*",
+									"*.University.TU Berlin",
+									"*.University.HU Berlin",
+									"*.University.FU Berlin",
+									"*.University.HTW Berlin",
+									"*.University.Europa University Flensburg",
+									"*.University.Beuth"
+								]
+							},
+							"valid_from": "2017-10-09T00:00:00.000Z"
+						}
+					},
+					{
+						"rule": {
+							"exp_date": "0000-01-01T00:00:00.000Z",
+							"purpose": {
+								"excluded": [
+									"*.Phone.*",
+									"*.Third-Party.*.Special-Offer"
+								],
+								"permitted": [
+									"*.Direct.*",
+									"*.Marketing.Direct.Email.*",
+									"*.Direct.*.Email.*",
+									"*.Email.*",
+									"*.Third-Party.*.Service-Updates"
+								]
+							},
+							"transformation": [
+								{
+									"attribute": "ingredients",
+									"tr_func": "none"
+								},
+								{
+									"attribute": "dob",
+									"tr_func": "anonymizer"
+								}
+							],
+							"utilizer": {
+								"excluded": [
+									"*.Business.*",
+									"*.Charite",
+									"*.University.HTW Berlin",
+									"*.University.Beuth",
+									"*.University.Europa University Flensburg",
+									"*.University.HS Flensburg"
+								],
+								"permitted": [
+									"*.Non-Profit.*",
+									"*.Research.*",
+									"*.University.TU Berlin",
+									"*.University.HU Berlin",
+									"*.University.FU Berlin"
+								]
+							},
+							"valid_from": "2017-10-09T00:00:00.000Z"
+						}
+					},
+					{
+						"rule": {
+							"exp_date": "0000-01-01T00:00:00.000Z",
+							"purpose": {
+								"excluded": [
+									"*.Email.*"
+								],
+								"permitted": [
+									"*.Direct.*"
+								]
+							},
+							"transformation": [
+								{
+									"attribute": "heart_rate",
+									"tr_func": "minmax_hourly"
+								}
+							],
+							"utilizer": {
+								"excluded": [
+									"*.Charite"
+								],
+								"permitted": [
+									"*.Research.*",
+									"*.University.TU Berlin"
+								]
+							},
+							"valid_from": "2017-10-09T00:00:00.000Z"
+						}
+					},
+					{
+						"rule": {
+							"exp_date": "0000-01-01T00:00:00.000Z",
+							"purpose": {
+								"excluded": [
+									"*.Email.*"
+								],
+								"permitted": [
+									"*.Direct.*"
+								]
+							},
+							"transformation": [
+								{
+									"attribute": "temperature",
+									"tr_func": "minmax_hourly"
+								}
+							],
+							"utilizer": {
+								"excluded": [
+									"*.Charite"
+								],
+								"permitted": [
+									"*.Research.*",
+									"*.University.TU Berlin"
+								]
+							},
+							"valid_from": "2017-10-09T00:00:00.000Z"
+						}
+					}
+				]
+			},
+			"query": {
+				"selector": {
+					"its": "a query"
+				}
+			},
+			"user_id": "42"
+		}
+	]
+}

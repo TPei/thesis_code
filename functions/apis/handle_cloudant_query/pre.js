@@ -1,10 +1,8 @@
 // endpoint called when querying the service
 // receives a cloudant query and some additional data
-var openwhisk = require('openwhisk')
 
 // for a given cloudant query, get only the user ids
 function main(params) {
-  var ow = openwhisk()
   let query = params.data.query
   // query may come in as object or stringified
   if (typeof(query) === 'string')

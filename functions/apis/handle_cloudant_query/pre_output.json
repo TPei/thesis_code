@@ -1,0 +1,30 @@
+{
+    "dbname": "user",
+    "passthrough": {
+        "access_purpose": "General-Purpose.Marketing.Direct.Email.Special-Offer",
+        "access_utilizer": "General-Utilizer.Non-Profit.University.TU-Berlin",
+        "query": {
+            "fields": [
+                "user_id",
+                "name",
+                "age",
+                "gender",
+                "race",
+                "comment"
+            ],
+            "selector": {
+                "breed": "mix",
+                "gender": "female"
+            }
+        }
+    },
+    "query": {
+        "fields": [
+            "user_id"
+        ],
+        "selector": {
+            "breed": "mix",
+            "gender": "female"
+        }
+    }
+}

@@ -1,5 +1,13 @@
 {
-  "dbname": "yappl",
+  "bookmark": "g1AAAAB2eJzLYWBgYMpgSmHgKy5JLCrJTq2MT8lPzkzJBYormKYYpKQmWZglGlukpJhYpBgmJSUaG6QmmiZbphmmGJiD9HHA9OUAdTASpS0rCwCD0yC8",
+  "docs": [
+    {
+      "user_id": "1337"
+    },
+    {
+      "user_id": "42"
+    }
+  ],
   "passthrough": {
     "access_purpose": "ap",
     "access_utilizer": "au",
@@ -13,16 +21,5 @@
         }
       }
     }
-  },
-  "query": {
-    "selector": {
-      "user_id": {
-        "$in": [
-          "1337",
-          "42"
-        ]
-      }
-    }
   }
 }
-
