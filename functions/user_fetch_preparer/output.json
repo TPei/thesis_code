@@ -1,82 +1,82 @@
 {
-    "data": [
-        {
-            "data": {
-                "fields": [
-                    "age",
-                    "breed",
-                    "dob",
-                    "email",
-                    "gender",
-                    "ingredients",
-                    "name"
-                ],
-                "id": "1337"
-            },
-            "passthrough": {
-                "compliant": {
-                    "age": "none",
-                    "breed": "none",
-                    "dob": "anonymizer",
-                    "email": "only_provider",
-                    "gender": "anonymizer",
-                    "ingredients": "none",
-                    "name": "none"
-                },
-                "nonCompliant": [
-                    "heart_rate",
-                    "temperature"
-                ],
-                "query": {
-                    "selector": {
-                        "user_id": {
-                            "$in": [
-                                "1337",
-                                "2011"
-                            ]
-                        }
-                    }
-                }
-            }
+  "data": [
+    {
+      "data": {
+        "fields": [
+          "age",
+          "breed",
+          "dob",
+          "email",
+          "gender",
+          "ingredients",
+          "name"
+        ],
+        "id": "1337"
+      },
+      "passthrough": {
+        "compliant": {
+          "age": "none",
+          "breed": "none",
+          "dob": "anonymizer",
+          "email": "only_provider",
+          "gender": "anonymizer",
+          "ingredients": "none",
+          "name": "none"
         },
-        {
-            "data": {
-                "fields": [
-                    "age",
-                    "breed",
-                    "dob",
-                    "email",
-                    "gender",
-                    "ingredients",
-                    "name"
-                ],
-                "id": "2011"
-            },
-            "passthrough": {
-                "compliant": {
-                    "age": "none",
-                    "breed": "none",
-                    "dob": "anonymizer",
-                    "email": "only_provider",
-                    "gender": "anonymizer",
-                    "ingredients": "none",
-                    "name": "none"
-                },
-                "nonCompliant": [
-                    "heart_rate",
-                    "temperature"
-                ],
-                "query": {
-                    "selector": {
-                        "user_id": {
-                            "$in": [
-                                "1337",
-                                "2011"
-                            ]
-                        }
-                    }
-                }
+        "nonCompliant": [
+          "heart_rate",
+          "temperature"
+        ],
+        "query": {
+          "selector": {
+            "user_id": {
+              "$in": [
+                "1337",
+                "2011"
+              ]
             }
+          }
         }
-    ]
+      }
+    },
+    {
+      "data": {
+        "fields": [
+          "age",
+          "breed",
+          "dob",
+          "email",
+          "gender",
+          "ingredients",
+          "name"
+        ],
+        "id": "2011"
+      },
+      "passthrough": {
+        "compliant": {
+          "age": "none",
+          "breed": "none",
+          "dob": "anonymizer",
+          "email": "only_provider",
+          "gender": "anonymizer",
+          "ingredients": "none",
+          "name": "none"
+        },
+        "nonCompliant": [
+          "heart_rate",
+          "temperature"
+        ],
+        "query": {
+          "selector": {
+            "user_id": {
+              "$in": [
+                "1337",
+                "2011"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
 }
