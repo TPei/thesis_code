@@ -1,113 +1,78 @@
 {
-    "data": [
+  "data": [
+    {
+      "actions": [
         {
-            "actions": [
-                {
-                    "none": "age"
-                },
-                {
-                    "none": "breed"
-                },
-                {
-                    "anonymizer": "dob"
-                },
-                {
-                    "only_provider": "email"
-                },
-                {
-                    "anonymizer": "gender"
-                },
-                {
-                    "none": "ingredients"
-                },
-                {
-                    "none": "name"
-                }
-            ],
-            "age": "11 months",
-            "breed": "mix",
-            "dob": "March 25, 2018",
-            "email": "panda@all_the_dogs.com",
-            "gender": "female",
-            "ingredients": [
-                "Labrador",
-                "Labrador",
-                "Labrador",
-                "German Shepherd"
-            ],
-            "name": "Panda"
+          "none": "age"
         },
         {
-            "actions": [
-                {
-                    "none": "age"
-                },
-                {
-                    "none": "breed"
-                },
-                {
-                    "anonymizer": "dob"
-                },
-                {
-                    "only_provider": "email"
-                },
-                {
-                    "anonymizer": "gender"
-                },
-                {
-                    "none": "ingredients"
-                },
-                {
-                    "none": "name"
-                }
-            ],
-            "age": "11 months",
-            "breed": "mix",
-            "dob": "March 25, 2018",
-            "email": "milli@all_the_dogs.com",
-            "gender": "female",
-            "ingredients": [
-                "Labrador",
-                "Labrador",
-                "Labrador",
-                "German Shepherd"
-            ],
-            "name": "Milli"
+          "none": "breed"
         },
         {
-            "actions": [
-                {
-                    "none": "age"
-                },
-                {
-                    "none": "breed"
-                },
-                {
-                    "anonymizer": "dob"
-                },
-                {
-                    "only_provider": "email"
-                },
-                {
-                    "anonymizer": "gender"
-                },
-                {
-                    "none": "ingredients"
-                },
-                {
-                    "none": "name"
-                }
-            ],
-            "age": "13 months",
-            "breed": "mix",
-            "dob": "January 13, 2018",
-            "email": "scott@all_the_dogs.com",
-            "gender": "male",
-            "ingredients": [
-                "Labrador",
-                "Australian Shepherd"
-            ],
-            "name": "Scott the Dog"
+          "anonymizer": "dob"
+        },
+        {
+          "only_provider": "email"
+        },
+        {
+          "anonymizer": "gender"
+        },
+        {
+          "none": "ingredients"
+        },
+        {
+          "none": "name"
         }
-    ]
+      ],
+      "age": "11 months",
+      "breed": "mix",
+      "dob": "March 25, 2018",
+      "email": "panda@all_the_dogs.com",
+      "gender": "female",
+      "ingredients": [
+        "Labrador",
+        "Labrador",
+        "Labrador",
+        "German Shepherd"
+      ],
+      "name": "Panda"
+    },
+    {
+      "actions": [
+        {
+          "none": "age"
+        },
+        {
+          "none": "breed"
+        },
+        {
+          "anonymizer": "dob"
+        },
+        {
+          "only_provider": "email"
+        },
+        {
+          "anonymizer": "gender"
+        },
+        {
+          "none": "ingredients"
+        },
+        {
+          "none": "name"
+        }
+      ],
+      "age": "11 months",
+      "breed": "mix",
+      "dob": "March 25, 2018",
+      "email": "milli@all_the_dogs.com",
+      "gender": "female",
+      "ingredients": [
+        "Labrador",
+        "Labrador",
+        "Labrador",
+        "German Shepherd"
+      ],
+      "name": "Milli"
+    }
+  ]
 }
