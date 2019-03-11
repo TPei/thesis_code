@@ -1,6 +1,17 @@
 packages:
-  thesis_demo:
+  cloudant:
     actions:
+      cloudant_query:
+        function: cloudant/exec_query_find/main.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+        inputs:
+          bluemixServiceName: $IBM_BLUEMIX_SERVICE_NAME
+          username: $IBM_CLOUDANT_USER
+          password: $IBM_CLOUDANT_PASSWORD
+          host: $IBM_CLOUDANT_HOST
+          apihost: $IBM_API_HOST
       handle_cloudant_query_pre:
         function: apis/handle_cloudant_query/pre.js
         runtime: nodejs:10
@@ -11,13 +22,44 @@ packages:
         runtime: nodejs:10
         limits:
           memorySize: 2048
-      fetch_yappl_for_user_pre:
-        function: cloudant/fetch_yappl_for_user/pre.js
+      fetch_user_data_pre:
+        function: cloudant/fetch_user_data/pre.js
         runtime: nodejs:10
         limits:
           memorySize: 2048
-      my_exec_query_find:
-        function: cloudant/exec_query_find/main.js
+      fetch_user_data_post:
+        function: cloudant/fetch_user_data/post.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+    sequences:
+      handle_cloudant_query:
+        actions: >
+          handle_cloudant_query_pre,
+          cloudant_query,
+          handle_cloudant_query_post
+      fetch_user_data:
+        actions: >
+          fetch_user_data_pre,
+          cloudant_query,
+          fetch_user_data_post
+  postgres:
+    actions:
+      postgres_query:
+        function: postgres_query/main.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+        inputs:
+          user: $IBM_PSQL_USER
+          password: $IBM_PSQL_PASSWORD
+          host: $IBM_PSQL_HOST
+          port: $IBM_PSQL_PORT
+          dbname: user
+  thesis:
+    actions:
+      fetch_yappl_for_user_pre:
+        function: cloudant/fetch_yappl_for_user/pre.js
         runtime: nodejs:10
         limits:
           memorySize: 2048
@@ -38,16 +80,6 @@ packages:
           memorySize: 2048
       user_fetch_preparer:
         function: user_fetch_preparer/main.js
-        runtime: nodejs:10
-        limits:
-          memorySize: 2048
-      fetch_user_data_pre:
-        function: cloudant/fetch_user_data/pre.js
-        runtime: nodejs:10
-        limits:
-          memorySize: 2048
-      fetch_user_data_post:
-        function: cloudant/fetch_user_data/post.js
         runtime: nodejs:10
         limits:
           memorySize: 2048
@@ -77,21 +109,11 @@ packages:
         limits:
           memorySize: 2048
     sequences:
-      handle_cloudant_query:
-        actions: >
-          handle_cloudant_query_pre,
-          my_exec_query_find,
-          handle_cloudant_query_post
       fetch_yappl:
         actions: >
           fetch_yappl_for_user_pre,
-          my_exec_query_find,
+          cloudant/cloudant_query,
           fetch_yappl_for_user_post
-      fetch_user_data:
-        actions: >
-          fetch_user_data_pre,
-          my_exec_query_find,
-          fetch_user_data_post
       transformation_sequence:
         actions: >
           transformation_sequence_preparer,
@@ -101,11 +123,11 @@ packages:
           transformation_finalizer
       api_yappl_parse_maker_fetcher_transformator:
         actions: >
-          handle_cloudant_query,
+          cloudant/handle_cloudant_query,
           fetch_yappl,
           yappl_parser,
           transformation_map_maker_direct,
           user_fetch_preparer,
-          fetch_user_data,
+          cloudant/fetch_user_data,
           transformation_sequence
 

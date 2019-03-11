@@ -1,0 +1,11 @@
+packages:
+  psql:
+    actions:
+      psql:
+        function: main.js
+        runtime: nodejs:10
+        inputs:
+          user: $IBM_PSQL_USER
+          password: $IBM_PSQL_PASSWORD
+          host: $IBM_PSQL_HOST
+          port: $IBM_PSQL_PORT
