@@ -1,0 +1,21 @@
+{
+  "dbname": "user",
+  "query": "SELECT user_id FROM \"user\".\"user\" WHERE breed = 'mix' AND gender = 'female' AND age > '1';",
+  "passthrough": {
+    "query": {
+      "selector": {
+        "breed": "mix",
+        "gender": "female",
+        "age": {
+          "$gt": 1
+        }
+      },
+      "fields": [
+        "user_id",
+        "name"
+      ]
+    },
+    "access_purpose": "General-Purpose.Marketing.Direct.Email.Special-Offer",
+    "access_utilizer": "General-Utilizer.Non-Profit.University.TU-Berlin"
+  }
+}

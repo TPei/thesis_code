@@ -1,24 +1,52 @@
 const yaml = require('js-yaml');
 const fs = require('fs');
 
+test('has cloudant package with data', () => {
+  let file = '../manifest.yml'
+  var doc = yaml.safeLoad(fs.readFileSync(file, 'utf8'));
+
+  let actions = doc.packages.cloudant.actions;
+  Object.keys(actions).forEach(actionName => {
+    let action = actions[actionName]
+    expect(action.runtime).toEqual('nodejs:10')
+    expect(action.limits.memorySize).toEqual(2048)
+  })
+  expect(Object.keys(actions).length).toEqual(5)
+
+  let sequenceNames = Object.keys(doc.packages.cloudant.sequences);
+  expect(sequenceNames.length).toEqual(2)
+});
+
+
+test('has postgres package with data', () => {
+  let file = '../manifest.yml'
+  var doc = yaml.safeLoad(fs.readFileSync(file, 'utf8'));
+
+  let actions = doc.packages.postgres.actions;
+  Object.keys(actions).forEach(actionName => {
+    let action = actions[actionName]
+    expect(action.runtime).toEqual('nodejs:10')
+    expect(action.limits.memorySize).toEqual(2048)
+  })
+  expect(Object.keys(actions).length).toEqual(1)
+
+  //let sequenceNames = Object.keys(doc.packages.cloudant.sequences);
+  //expect(sequenceNames.length).toEqual(2)
+});
+
 test('required sequences are in manifest', () => {
   let file = '../manifest.yml'
   var doc = yaml.safeLoad(fs.readFileSync(file, 'utf8'));
 
-  let sequenceNames = Object.keys(doc.packages.thesis_demo.sequences);
-  expect(sequenceNames.length).toEqual(5)
-  expect(sequenceNames).toContain('handle_cloudant_query');
-  expect(sequenceNames).toContain('fetch_yappl');
-  expect(sequenceNames).toContain('fetch_user_data');
-  expect(sequenceNames).toContain('transformation_sequence');
-  expect(sequenceNames).toContain('api_yappl_parse_maker_fetcher_transformator');
+  let sequenceNames = Object.keys(doc.packages.thesis.sequences);
+  expect(sequenceNames.length).toEqual(3)
 });
 
 test('all actions have nodejs:10 as runtime and 2048MB memory size', () => {
   let file = '../manifest.yml'
   var doc = yaml.safeLoad(fs.readFileSync(file, 'utf8'));
 
-  let actions = doc.packages.thesis_demo.actions
+  let actions = doc.packages.thesis.actions
   Object.keys(actions).forEach(actionName => {
     let action = actions[actionName]
     expect(action.runtime).toEqual('nodejs:10')

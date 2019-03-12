@@ -46,7 +46,7 @@ packages:
   postgres:
     actions:
       postgres_query:
-        function: postgres_query/main.js
+        function: postgres/postgres_query/main.js
         runtime: nodejs:10
         limits:
           memorySize: 2048

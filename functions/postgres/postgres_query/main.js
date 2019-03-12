@@ -14,7 +14,7 @@ function main(params) {
 
   return client.query(params.query).then(res => {
     client.end()
-    return { response: res.rows }
+    return { docs: res.rows, passthrough: params.passthrough }
   }).catch(err => {
     client.end()
     return { error: err }

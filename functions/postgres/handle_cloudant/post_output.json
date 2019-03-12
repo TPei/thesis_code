@@ -1,0 +1,20 @@
+{
+  "data": {
+    "access_purpose": "ap",
+    "access_utilizer": "au",
+    "ids": [
+      "1337",
+      "42"
+    ],
+    "query": {
+      "selector": {
+        "user_id": {
+          "$in": [
+            "1337",
+            "42"
+          ]
+        }
+      }
+    }
+  }
+}
