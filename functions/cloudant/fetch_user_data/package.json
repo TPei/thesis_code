@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "lodash": "~4.7"
+  },
+  "devDependencies": {
+    "lodash": "~4.7"
+  }
+}
