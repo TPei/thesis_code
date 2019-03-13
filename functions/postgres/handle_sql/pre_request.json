@@ -1,0 +1,7 @@
+{
+  "data": {
+    "query": "SELECT name, email, user_id FROM \"user\".\"user\" WHERE email = 'panda@allthedogs.com'",
+    "access_purpose": "General-Purpose.Marketing.Direct.Email.Special-Offer",
+    "access_utilizer": "General-Utilizer.Non-Profit.University.TU-Berlin"
+  }
+}
