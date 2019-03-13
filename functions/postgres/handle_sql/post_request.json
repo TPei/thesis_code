@@ -1,0 +1,15 @@
+{
+  "docs": [
+    {
+      "user_id": "1337"
+    },
+    {
+      "user_id": "42"
+    }
+  ],
+  "passthrough": {
+    "access_purpose": "ap",
+    "access_utilizer": "au",
+    "query": "SELECT user_id FROM \"user\".\"user\" WHERE email = 'panda@allthedogs.com'"
+  }
+}

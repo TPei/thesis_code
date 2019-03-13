@@ -1,0 +1,11 @@
+{
+  "data": {
+    "access_purpose": "ap",
+    "access_utilizer": "au",
+    "ids": [
+      "1337",
+      "42"
+    ],
+    "query": "SELECT user_id FROM \"user\".\"user\" WHERE email = 'panda@allthedogs.com'"
+  }
+}

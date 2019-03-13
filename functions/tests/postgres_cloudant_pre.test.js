@@ -2,7 +2,7 @@ const fs = require('fs');
 const parse = require('../postgres/handle_cloudant/pre.js').handler
 
 // test that all request.json / output.json files match
-test('yappl_parser does its job', () => {
+test('postgres_cloudant_pre does its job', () => {
   let input = '../postgres/handle_cloudant/pre_request.json'
   let output = '../postgres/handle_cloudant/pre_output.json'
 
