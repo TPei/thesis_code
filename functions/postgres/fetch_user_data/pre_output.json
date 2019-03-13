@@ -1,0 +1,67 @@
+{
+  "dbname": "user",
+  "passthrough": [
+    {
+      "data": {
+        "fields": [
+          "age",
+          "breed",
+          "dob",
+          "email",
+          "gender",
+          "ingredients",
+          "name"
+        ],
+        "id": "1337"
+      },
+      "passthrough": {
+        "compliant": {
+          "age": "none",
+          "breed": "none",
+          "dob": "anonymizer",
+          "email": "only_provider",
+          "gender": "anonymizer",
+          "ingredients": "none",
+          "name": "none"
+        },
+        "nonCompliant": [
+          "heart_rate",
+          "temperature"
+        ],
+        "query": "SELECT name, email, user_id FROM \"user\".\"user\" WHERE email = 'panda@allthedogs.com'"
+      }
+    },
+    {
+      "data": {
+        "fields": [
+          "age",
+          "breed",
+          "dob",
+          "email",
+          "gender",
+          "ingredients",
+          "name"
+        ],
+        "id": "2011"
+      },
+      "passthrough": {
+        "compliant": {
+          "age": "none",
+          "breed": "none",
+          "dob": "anonymizer",
+          "email": "only_provider",
+          "gender": "anonymizer",
+          "ingredients": "none",
+          "name": "none"
+        },
+        "nonCompliant": [
+          "heart_rate",
+          "temperature"
+        ],
+        "query": "SELECT name, email, user_id FROM \"user\".\"user\" WHERE email = 'panda@allthedogs.com'"
+      }
+    }
+  ],
+  "query": "SELECT age, breed, dob, email, gender, ingredients, name, user_id FROM \"user\".\"user\" WHERE user_id IN ('1337', '2011')"
+}
+
