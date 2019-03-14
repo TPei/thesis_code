@@ -4,14 +4,46 @@
       "data": {
         "fields": [
           "age",
-          "breed",
-          "dob",
-          "email",
-          "gender",
-          "ingredients",
-          "name"
+          "name",
+          "user_id"
         ],
         "id": "1337"
+      },
+      "passthrough": {
+        "compliant": {
+          "age": "none",
+          "breed": "none",
+          "dob": "anonymizer",
+          "email": "only_provider",
+          "gender": "anonymizer",
+          "ingredients": "none",
+          "name": "none",
+          "user_id": "none"
+        },
+        "nonCompliant": [
+          "heart_rate",
+          "temperature"
+        ],
+        "query": {
+          "selector": {
+            "user_id": {
+              "$in": [
+                "1337",
+                "2011"
+              ]
+            }
+          },
+          "fields": ["age", "name", "user_id"]
+        }
+      }
+    },
+    {
+      "data": {
+        "fields": [
+          "age",
+          "name"
+        ],
+        "id": "2011"
       },
       "passthrough": {
         "compliant": {
@@ -35,7 +67,8 @@
                 "2011"
               ]
             }
-          }
+          },
+          "fields": ["age", "name", "user_id"]
         }
       }
     },
@@ -50,7 +83,7 @@
           "ingredients",
           "name"
         ],
-        "id": "2011"
+        "id": "42"
       },
       "passthrough": {
         "compliant": {

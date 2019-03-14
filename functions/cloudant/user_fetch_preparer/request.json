@@ -8,7 +8,8 @@
                 "email": "only_provider",
                 "gender": "anonymizer",
                 "ingredients": "none",
-                "name": "none"
+                "name": "none",
+                "user_id": "none"
             },
             "nonCompliant": [
                 "heart_rate",
@@ -22,7 +23,8 @@
                             "2011"
                         ]
                     }
-                }
+                },
+                "fields": ["age", "name", "user_id"]
             },
             "user_id": "1337"
         },
@@ -48,9 +50,36 @@
                             "2011"
                         ]
                     }
-                }
+                },
+                "fields": ["age", "name", "user_id"]
             },
             "user_id": "2011"
+        },
+        {
+            "compliant": {
+                "age": "none",
+                "breed": "none",
+                "dob": "anonymizer",
+                "email": "only_provider",
+                "gender": "anonymizer",
+                "ingredients": "none",
+                "name": "none"
+            },
+            "nonCompliant": [
+                "heart_rate",
+                "temperature"
+            ],
+            "query": {
+                "selector": {
+                    "user_id": {
+                        "$in": [
+                            "1337",
+                            "2011"
+                        ]
+                    }
+                }
+            },
+            "user_id": "42"
         }
     ]
 }
