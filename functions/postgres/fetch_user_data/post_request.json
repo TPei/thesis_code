@@ -13,7 +13,7 @@
         "German Shepherd"
       ],
       "name": "Panda",
-      "user_id": "1337"
+      "user_id": 1337
     },
     {
       "age": "11 months",
