@@ -22,6 +22,11 @@ packages:
         runtime: nodejs:10
         limits:
           memorySize: 2048
+      user_fetch_preparer:
+        function: cloudant/user_fetch_preparer/main.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
       fetch_user_data_pre:
         function: cloudant/fetch_user_data/pre.js
         runtime: nodejs:10
@@ -33,13 +38,14 @@ packages:
         limits:
           memorySize: 2048
     sequences:
-      handle_cloudant_query:
+      handle_query:
         actions: >
           handle_cloudant_query_pre,
           cloudant_query,
           handle_cloudant_query_post
       fetch_user_data:
         actions: >
+          user_fetch_preparer,
           fetch_user_data_pre,
           cloudant_query,
           fetch_user_data_post
@@ -56,6 +62,43 @@ packages:
           host: $IBM_PSQL_HOST
           port: $IBM_PSQL_PORT
           dbname: user
+      handle_sql_query_pre:
+        function: postgres/handle_sql/pre.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+      handle_sql_query_post:
+        function: postgres/handle_sql/post.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+      user_fetch_preparer:
+        function: postgres/user_fetch_preparer/main.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+      fetch_user_data_pre:
+        function: postgres/fetch_user_data/pre.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+      fetch_user_data_post:
+        function: postgres/fetch_user_data/post.js
+        runtime: nodejs:10
+        limits:
+          memorySize: 2048
+    sequences:
+      handle_query:
+        actions: >
+          handle_sql_query_pre,
+          postgres_query,
+          handle_sql_query_post
+      fetch_user_data:
+        actions: >
+          user_fetch_preparer,
+          fetch_user_data_pre,
+          postgres_query,
+          fetch_user_data_post
   thesis:
     actions:
       fetch_yappl_for_user_pre:
@@ -75,11 +118,6 @@ packages:
           memorySize: 2048
       transformation_map_maker_direct:
         function: transformation_map_maker/direct.js
-        runtime: nodejs:10
-        limits:
-          memorySize: 2048
-      user_fetch_preparer:
-        function: user_fetch_preparer/main.js
         runtime: nodejs:10
         limits:
           memorySize: 2048
@@ -123,11 +161,10 @@ packages:
           transformation_finalizer
       api_yappl_parse_maker_fetcher_transformator:
         actions: >
-          cloudant/handle_cloudant_query,
+          postgres/handle_query,
           fetch_yappl,
           yappl_parser,
           transformation_map_maker_direct,
-          user_fetch_preparer,
-          cloudant/fetch_user_data,
+          postgres/fetch_user_data,
           transformation_sequence
 
