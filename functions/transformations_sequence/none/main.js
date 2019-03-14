@@ -10,7 +10,7 @@ function filter(params) {
   actions.forEach(function(action) {
     let name = Object.keys(action)[0] // there's only one
     let field = action[name]
-    if(name === 'none') {
+    if(name === 'none' && params[field] !== undefined) {
       let res = none(params[field])
 
       updated_params[field] = res

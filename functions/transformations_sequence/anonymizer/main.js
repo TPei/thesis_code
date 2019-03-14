@@ -9,7 +9,7 @@ function filter(params) {
   actions.forEach(function(action) {
     let name = Object.keys(action)[0] // there's only one
     let field = action[name]
-    if(name === 'anonymizer') {
+    if(name === 'anonymizer' && params[field] !== undefined) {
       let res = anonymize(params[field])
 
       updated_params[field] = res
