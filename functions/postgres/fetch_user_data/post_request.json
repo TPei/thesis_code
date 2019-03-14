@@ -1,0 +1,96 @@
+{
+  "docs": [
+    {
+      "age": "11 months",
+      "breed": "mix",
+      "dob": "March 25, 2018",
+      "email": "panda@all_the_dogs.com",
+      "gender": "female",
+      "ingredients": [
+        "Labrador",
+        "Labrador",
+        "Labrador",
+        "German Shepherd"
+      ],
+      "name": "Panda",
+      "user_id": "1337"
+    },
+    {
+      "age": "11 months",
+      "breed": "mix",
+      "dob": "March 25, 2018",
+      "email": "milli@all_the_dogs.com",
+      "gender": "female",
+      "ingredients": [
+        "Labrador",
+        "Labrador",
+        "Labrador",
+        "German Shepherd"
+      ],
+      "name": "Milli",
+      "user_id": "2011"
+    }
+  ],
+  "passthrough": [
+    {
+      "data": {
+        "fields": [
+          "age",
+          "breed",
+          "dob",
+          "email",
+          "gender",
+          "ingredients",
+          "name"
+        ],
+        "id": "1337"
+      },
+      "passthrough": {
+        "compliant": {
+          "age": "none",
+          "breed": "none",
+          "dob": "anonymizer",
+          "email": "only_provider",
+          "gender": "anonymizer",
+          "ingredients": "none",
+          "name": "none"
+        },
+        "nonCompliant": [
+          "heart_rate",
+          "temperature"
+        ],
+        "query": "SELECT name, email, user_id FROM \"user\".\"user\" WHERE email = 'panda@allthedogs.com'"
+      }
+    },
+    {
+      "data": {
+        "fields": [
+          "age",
+          "breed",
+          "dob",
+          "email",
+          "gender",
+          "ingredients",
+          "name"
+        ],
+        "id": "2011"
+      },
+      "passthrough": {
+        "compliant": {
+          "age": "none",
+          "breed": "none",
+          "dob": "anonymizer",
+          "email": "only_provider",
+          "gender": "anonymizer",
+          "ingredients": "none",
+          "name": "none"
+        },
+        "nonCompliant": [
+          "heart_rate",
+          "temperature"
+        ],
+        "query": "SELECT name, email, user_id FROM \"user\".\"user\" WHERE email = 'panda@allthedogs.com'"
+      }
+    }
+  ]
+}
