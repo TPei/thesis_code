@@ -1,0 +1,21 @@
+{
+  "actions": [
+    {
+      "thesis_demo/anonymizer": "name"
+    },
+    {
+      "thesis_demo/none": "age"
+    },
+    {
+      "thesis_demo/only_provider": "email"
+    },
+    {
+      "thesis_demo/anonymizer": "gender"
+    }
+  ],
+  "name": "Panda",
+  "age": "< 1 year",
+  "gender": "female",
+  "email": "Panda@all_the_dogs.com",
+  "race": "dog"
+}

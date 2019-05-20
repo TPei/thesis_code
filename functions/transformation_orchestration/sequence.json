@@ -1,0 +1,16 @@
+{
+  "actions": [
+    {
+      "thesis_demo/anonymizer": "name"
+    },
+    {
+      "thesis_demo/none": "age"
+    },
+    {
+      "thesis_demo/only_provider": "email"
+    },
+    {
+      "thesis_demo/anonymizer": "gender"
+    }
+  ]
+}
